@@ -347,15 +347,6 @@ html.rv .r.in{opacity:1;transform:none}
  </section>
  <svg class="wave"><use href="#wv"/></svg>
 
- <!-- gifts -->
- <section class="sec r">
-  <svg class="ico"><use href="#ic-gift"/></svg>
-  <h2 class="st">Gifts</h2>
-  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
-  <p class="lead">Your love, blessings and presence are the greatest gifts we could ever ask for.</p>
- </section>
- <svg class="wave"><use href="#wv"/></svg>
-
  <!-- rsvp -->
  <section class="sec r" id="rsvp-sec">
   <svg class="ico"><use href="#ic-mail"/></svg>
@@ -575,6 +566,9 @@ if (CONFIG.photos.length){ $("#photos").hidden = false; $("#gal").innerHTML = CO
 
 /* rsvp */
 const f = $("#rsvp"), att = $("#att"), more = $("#more"), err = $("#err");
+const hasWa = () => !!(CONFIG.whatsapp[order] || CONFIG.whatsapp.bride || CONFIG.whatsapp.groom);
+const sendLabel = hasWa() ? "Send RSVP on WhatsApp" : "Send RSVP";
+$("#send").textContent = sendLabel;
 let n = 1;
 const setN = v => { n = Math.max(1, Math.min(15, v)); $("#gn").textContent = n; $("#gl").textContent = n === 1 ? "just me" : "in total"; };
 $("#minus").addEventListener("click", () => setN(n - 1));
@@ -616,13 +610,14 @@ f.addEventListener("submit", async e => {
       if (data.message) lines.push("", "Wishes: " + data.message);
       lines.push("", "(" + side + " invite)");
       wa.href = "https://wa.me/" + num + "?text=" + encodeURIComponent(lines.join("\n"));
-      wa.hidden = false;
-      $("#tn").textContent = "One last step: tap the button to send your reply to us on WhatsApp.";
+      wa.hidden = false; wa.textContent = "WhatsApp didn't open? Tap here";
+      $("#tn").textContent = "WhatsApp is opening with your reply — just tap send.";
+      location.href = wa.href;
     } else { wa.hidden = true; $("#tn").textContent = CONFIG.rsvpUrl ? "" : "Preview only — replies are not being sent yet."; }
     f.hidden = true; $("#thanks").hidden = false;
     $("#rsvp-sec").scrollIntoView({behavior: reduce ? "auto" : "smooth"});
   }catch(x){ err.textContent = "We couldn't send your reply. Please check your connection and try again."; }
-  btn.disabled = false; btn.textContent = "Send RSVP";
+  btn.disabled = false; btn.textContent = sendLabel;
 });
 $("#again").addEventListener("click", () => { $("#thanks").hidden = true; f.hidden = false; });
 }

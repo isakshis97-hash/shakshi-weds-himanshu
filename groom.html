@@ -410,6 +410,11 @@ footer.fr .ty{margin-top:0}
 .tynm{position:absolute;left:30%;right:30%;top:77.6%;height:5.8%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f5efe6;text-align:center}
 .tynm .tyn{font:400 clamp(15px,4.4vw,20px)/1.1 "Playfair Display",serif;color:#3e3430;white-space:nowrap}
 .tynm small,.tynm small span{font:italic 400 clamp(9px,2.5vw,11.5px)/1.3 "Playfair Display",serif;color:#8a7458;white-space:nowrap;margin-top:2px}
+
+#cue{position:fixed;left:50%;bottom:max(22px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:55;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 18px 6px;border:1px solid #dcc394;border-radius:999px;background:rgba(253,248,240,.92);color:#8a6a3a;font:500 13px/1 Jost,sans-serif;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 6px 16px rgba(120,80,40,.18);cursor:pointer;transition:opacity .5s}
+#cue svg{width:20px;height:20px;animation:cuebob 1.4s ease-in-out infinite}
+#cue.gone{opacity:0;pointer-events:none}
+@keyframes cuebob{50%{transform:translateY(5px)}}
 html.rv .r{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
 html.rv .r.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}#petals{display:none}}
@@ -435,6 +440,7 @@ html.rv .r.in{opacity:1;transform:none}
  <div class="otx"><p class="onm" data-mono>Shakshi &amp; Himanshu</p><p class="tapl">Tap to open</p></div>
 </div>
 
+<button id="cue" type="button" hidden aria-label="Scroll down">Scroll<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
 <button id="snd" type="button" aria-label="Play music" hidden><i></i><i></i><i></i><i></i></button>
 
 <main>
@@ -633,10 +639,15 @@ let opened = false;
 const openIt = () => {
   if (opened) return; opened = true; startMusic();
   $("#open").classList.add("go"); setTimeout(() => document.body.classList.add("shown"), reduce ? 0 : 700);
-  setTimeout(() => { $("#open").hidden = true; document.body.classList.remove("locked"); }, reduce ? 200 : 1700);
+  setTimeout(() => { $("#open").hidden = true; document.body.classList.remove("locked"); if (scrollY < 60) $("#cue").hidden = false; }, reduce ? 200 : 1700);
 };
 $("#gcard").addEventListener("click", openIt);
 $(".tapl").addEventListener("click", openIt);
+
+/* scroll hint */
+const cue = $("#cue");
+addEventListener("scroll", () => { if (scrollY > innerHeight * .6) cue.classList.add("gone"); }, {passive:true});
+cue.addEventListener("click", () => { cue.classList.add("gone"); scrollBy({top: innerHeight, behavior: reduce ? "auto" : "smooth"}); });
 
 /* reveal + plane */
 if ("IntersectionObserver" in window){

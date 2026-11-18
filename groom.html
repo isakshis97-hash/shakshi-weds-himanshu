@@ -248,6 +248,33 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;back
 main::before,main::after{content:"";position:absolute;top:0;bottom:0;width:10px;border-left:1px solid rgba(190,150,80,.45);border-right:1px solid rgba(190,150,80,.22);pointer-events:none}
 main::before{left:6px}main::after{right:6px}
 @media(max-width:420px){main::before{left:4px}main::after{right:4px}}
+
+/* standard lotus-arch background */
+#bgfix{position:fixed;inset:0;z-index:0;background:#f7f4ef url(img/tpl-lotus.jpg) center/cover no-repeat}
+@media(min-aspect-ratio:9/14){#bgfix{background-size:auto 100%;background-color:#f6f2ec}}
+body::before,body::after,main::before,main::after{display:none!important}
+main{max-width:500px}
+.sec{padding:56px 34px}
+.tcard,.ecard{background:none!important;aspect-ratio:auto!important;-webkit-mask-image:none!important;mask-image:none!important}
+.tin,.ein{position:static!important;background:none!important;padding:0!important;border-radius:0!important}
+.tin .mantra{display:none}
+.ein .kick{font-size:28px}.ein .st{font-size:clamp(28px,8vw,36px)}
+.ein .evw{max-width:320px;margin:0 auto}
+.ein .ev{padding:12px 0}.ein .ev h3{font-size:19px}.ein .ev p{font-size:15px}
+.ein .ev::before{left:-24px;top:20px}
+.tin .nm{font-size:clamp(44px,13vw,58px)}
+.tin .host,.tin .req{font-size:15.5px}.tin .gp{font-size:13px}.tin .ofn{font-size:14px}.tin .with{font-size:28px;margin:10px 0 6px}.tin .tag{font-size:15px;margin-top:18px}
+.gpg img{-webkit-mask-image:none!important;mask-image:none!important;border-radius:4px;box-shadow:0 10px 30px rgba(170,100,50,.18)!important}
+.hero{padding-top:70px}
+.cd b,.dcard{background:rgba(255,253,250,.9)}
+footer.sec{padding-bottom:42vh}
+
+#fgfix{position:fixed;inset:0;z-index:30;pointer-events:none;background:inherit;background:#f7f4ef url(img/tpl-lotus.jpg) center/cover no-repeat;
+ -webkit-mask-image:linear-gradient(180deg,#000 0,#000 15%,transparent 23%,transparent 78%,#000 87%,#000 100%);mask-image:linear-gradient(180deg,#000 0,#000 15%,transparent 23%,transparent 78%,#000 87%,#000 100%)}
+@media(min-aspect-ratio:9/14){#fgfix{background-size:auto 100%;background-color:#f6f2ec}}
+.gpg img{max-height:58svh;width:auto;max-width:78%;box-shadow:none!important;-webkit-mask-image:radial-gradient(75% 70% at 50% 50%,#000 60%,transparent 100%)!important;mask-image:radial-gradient(75% 70% at 50% 50%,#000 60%,transparent 100%)!important}
+.gpg{min-height:100svh}
+main{padding-top:14vh}
 html.rv .r{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
 html.rv .r.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}#petals{display:none}}
@@ -264,6 +291,8 @@ html.rv .r.in{opacity:1;transform:none}
  <symbol id="plane" viewBox="0 0 40 46"><path d="M20 2c2 0 3 3 3 6v10l15 8v4l-15-4v9l5 4v3l-8-2-8 2v-3l5-4v-9L2 30v-4l15-8V8c0-3 1-6 3-6z" fill="#fffdf8" stroke="#b48a3c" stroke-width="1.4"/></symbol>
 </defs></svg>
 
+<div id="bgfix" aria-hidden="true"></div>
+<div id="fgfix" aria-hidden="true"></div>
 <div id="petals" aria-hidden="true"></div>
 <div id="shower" aria-hidden="true"></div>
 
@@ -276,7 +305,7 @@ html.rv .r.in{opacity:1;transform:none}
 <button id="snd" type="button" aria-label="Play music" hidden><i></i><i></i><i></i><i></i></button>
 
 <main>
- <section class="gpg"><img src="img/tpl-ganesha.jpg" alt="Om Shree Ganeshay Namah"></section>
+ <section class="gpg"><img src="img/tpl-ganesha2.jpg" alt="Om Shree Ganeshay Namah"></section>
  <header class="sec hero">
   <div class="tcard">
    <div class="tin">

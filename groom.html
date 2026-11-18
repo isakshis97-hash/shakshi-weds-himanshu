@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shakshi &amp; Himanshu</title>
+<meta name="description" content="You're invited to the wedding of Shakshi & Himanshu · 11 February 2027 · Khajuraho">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Dancing+Script:wght@500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: tender, festive, formal — a keepsake, not a website.
+   IDEA: an embossed sage card that opens like doors onto a draped stage.
+   PICTURE: curtains + a Khajuraho temple garden (the venue's own landmark).
+   COLOUR and TYPE: sage, linen, blush, gold; Pinyon/Dancing script, Playfair, Lora.
+   LAYOUT: one 560px phone column, vine borders, centred sections. */
+:root{color-scheme:light;--sage:#4b5d3f;--sage2:#6b7d5a;--sage3:#97a785;--ink:#34412c;--mute:#66705a;--linen:#e8dfca;--cream:#f4ecdc;--gold:#b8963e;--blush:#e8bdb4}
+*{box-sizing:border-box;min-width:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:17px/1.6 Lora,Georgia,serif;overflow-x:clip;background-color:var(--linen);
+ background-image:repeating-linear-gradient(0deg,rgba(110,90,50,.05) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(110,90,50,.045) 0 1px,transparent 1px 4px)}
+body.locked{overflow:hidden;height:100svh}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* gate */
+#gate{position:fixed;inset:0;z-index:50;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.door{position:absolute;top:0;bottom:0;width:50.5%;background:#7b8c68;transition:transform 1.6s cubic-bezier(.7,0,.3,1);
+ background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px)}
+.door svg{width:100%;height:100%;color:#8d9e79;filter:drop-shadow(1.2px 1.2px 0 rgba(40,50,30,.28)) drop-shadow(-1px -1px 0 rgba(255,255,255,.22))}
+.door.l{left:0;box-shadow:inset -10px 0 18px rgba(0,0,0,.18)}.door.r{right:0;box-shadow:inset 10px 0 18px rgba(0,0,0,.18)}
+.door.l::after{content:"";position:absolute;right:0;top:0;bottom:0;width:3px;background:linear-gradient(90deg,#8a6d2c,#e3c97f,#8a6d2c)}
+#gate.open .door.l{transform:translateX(-102%)}#gate.open .door.r{transform:translateX(102%)}
+#plaque{position:relative;z-index:2;width:min(62vw,236px);aspect-ratio:200/280;border:0;background:none;padding:0;cursor:pointer;transition:opacity .6s,transform .6s;filter:drop-shadow(0 10px 18px rgba(30,40,20,.35));animation:breathe 3.2s ease-in-out infinite}
+#plaque svg{position:absolute;inset:0;width:100%;height:100%}
+#plaque .tx{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:6px;color:#5a5a3a}
+#plaque .mono{font:44px/1 "Pinyon Script",cursive;color:var(--sage)}
+#plaque .tap{font:600 15px/1 "Playfair Display",serif;letter-spacing:.14em;color:#6b5a2e}
+#plaque .rule{width:56%;height:1px;background:linear-gradient(90deg,transparent,#a88a45,transparent)}
+#gate.open #plaque{opacity:0;transform:scale(.85);animation:none}
+@keyframes breathe{50%{transform:scale(1.035)}}
+
+/* audio */
+#snd{position:fixed;top:14px;right:max(14px,calc(50% - 266px));z-index:60;width:46px;height:46px;border:0;border-radius:12px;background:var(--sage);color:#f4ecdc;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+#snd svg{width:22px;height:22px}
+
+/* vines */
+.vine{position:fixed;top:0;bottom:0;width:48px;z-index:1;pointer-events:none;opacity:0;transition:opacity .8s}
+.vine.l{left:max(0px,calc(50% - 300px))}.vine.r{right:max(0px,calc(50% - 300px));transform:scaleX(-1)}
+body.vines .vine{opacity:1}
+.vine svg{width:100%;height:100%}
+
+main{position:relative;max-width:600px;margin:0 auto}
+.sec{position:relative;z-index:2;text-align:center;padding:56px 58px}
+@media(max-width:420px){.sec{padding:48px 50px}}
+
+/* hero */
+.hero{position:relative;z-index:3;min-height:max(100svh,780px);overflow:hidden;text-align:center;padding:96px 34px 230px;background-color:var(--linen);background-image:inherit}
+.hero>.r{position:relative;z-index:2}
+.cur{position:absolute;top:0;height:74%;width:min(15%,130px)}.cur.cl{left:0}.cur.cr{right:0;transform:scaleX(-1)}
+.swag{position:absolute;top:0;left:0;width:100%;height:76px}
+.scene{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto}
+.hero .kick{font:italic 500 19px/1.3 "Cormorant Garamond",serif;color:var(--mute);margin:16px 0 4px}
+.hero h1{font:500 clamp(28px,7.4vw,38px)/1.1 "Playfair Display",serif;color:var(--sage);margin:0}
+.nm{font:clamp(66px,19vw,104px)/1 "Pinyon Script",cursive;color:var(--sage);margin:22px 0 6px}
+.fam{font:italic 500 clamp(16px,4.3vw,19px)/1.45 "Cormorant Garamond",serif;color:var(--mute);margin:0}
+.amp{font:clamp(40px,11vw,56px)/1 "Pinyon Script",cursive;color:var(--gold);margin:14px 0 0}
+.tag{display:inline-block;margin-top:22px;font:600 15px/1 "Playfair Display",serif;color:var(--gold);letter-spacing:.06em}
+
+/* common */
+.ico{width:38px;height:38px;color:var(--sage);margin:0 auto 6px}
+.st{font:600 clamp(36px,10vw,48px)/1.1 "Dancing Script",cursive;color:var(--sage);margin:0;text-wrap:balance}
+.orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px auto 26px;color:var(--sage3)}
+.orn i{width:80px;height:1px;background:currentColor}.orn svg{width:14px;height:13px;fill:currentColor}
+.wave{display:block;width:76%;max-width:420px;height:22px;margin:0 auto;color:var(--sage3);position:relative;z-index:2}
+.lead{font:italic 500 clamp(21px,5.6vw,25px)/1.65 "Cormorant Garamond",serif;color:#3e4a35;margin:0}
+p{margin:0 0 12px}.sm{font-size:15px;color:var(--mute)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 26px;border:0;border-radius:999px;background:var(--sage);color:#f6efe0;font:600 14px/1 "Playfair Display",serif;letter-spacing:.16em;text-decoration:none;cursor:pointer;box-shadow:0 8px 18px rgba(50,65,40,.25)}
+.btn svg{width:20px;height:20px}
+.btn.ghost{background:transparent;color:var(--sage);border:1.5px solid var(--sage);box-shadow:none;letter-spacing:.06em}
+
+/* scratch */
+.heart{position:relative;width:min(100%,260px);aspect-ratio:240/220;margin:6px auto 22px}
+.heart svg,.heart canvas{position:absolute;inset:0;width:100%;height:100%}
+.heart canvas{touch-action:none;cursor:grab;transition:opacity .9s}
+.heart canvas.done{opacity:0;pointer-events:none}
+
+/* countdown */
+.cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:380px;margin:0 auto}
+.cd b{display:block;padding:14px 0 10px;border:1px solid #c9bf9f;border-radius:12px;background:rgba(210,198,165,.35);font:600 clamp(26px,7vw,34px)/1 "Playfair Display",serif;font-variant-numeric:tabular-nums}
+.cd span{display:block;margin-top:8px;font:13px/1 Lora,serif;letter-spacing:.08em;color:var(--mute)}
+
+/* gallery */
+.gal{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px}
+.gal img{flex:none;width:86%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;scroll-snap-align:center;border:6px solid #efe2d8}
+
+/* timeline */
+.day{display:flex;align-items:center;gap:12px;margin:8px 0 18px;font:600 15px/1.2 "Playfair Display",serif;letter-spacing:.12em;color:var(--ink)}
+.day::before,.day::after{content:"";flex:1;height:1px;background:#a9ab8c}
+.ev{display:grid;grid-template-columns:5.6em minmax(0,1fr);text-align:left;margin-bottom:22px}
+.ev time{font:600 17px/1.5 "Playfair Display",serif;white-space:nowrap;padding-right:14px;text-align:right}
+.ev div{border-left:1px solid #a9ab8c;padding-left:16px}
+.ev h3{font:600 21px/1.25 "Playfair Display",serif;color:var(--sage);margin:0 0 3px}
+.ev p{font-size:15.5px;color:var(--mute);margin:0}
+.gap{height:18px}
+
+/* venue */
+.vn{font:600 clamp(24px,6.5vw,30px)/1.2 "Playfair Display",serif;color:#2f3a28;margin:0 0 6px}
+.addr{color:var(--mute);margin-bottom:22px}
+.card{background:rgba(244,236,220,.7);border:1px solid #cfc6a8;border-radius:16px;padding:18px 18px 16px;text-align:left;margin:0 auto 14px;max-width:420px}
+.card h3{font:600 18px/1.3 "Playfair Display",serif;color:var(--sage);margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.card h3 svg{width:22px;height:22px;flex:none}
+.card p{font-size:15.5px;margin:0;color:#4b5642}
+.ticks{list-style:none;padding:0;margin:18px auto 0;max-width:420px;text-align:left}
+.ticks li{position:relative;padding-left:22px;margin-bottom:10px;font-size:15.5px;color:#4b5642}
+.ticks li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--sage3)}
+.ticks b{color:var(--sage);font-weight:500}
+
+/* form */
+form,.thanks{max-width:420px;margin:0 auto;text-align:left}
+.f{margin-bottom:18px}
+.f>label,.f>.lb{display:block;font:600 16px/1.3 "Playfair Display",serif;margin-bottom:7px}
+.f .req{color:#b4493b}
+.hint{display:block;font-size:13.5px;color:var(--mute);margin-top:6px;line-height:1.45}
+input[type=text],input[type=tel],select,textarea{width:100%;min-height:48px;padding:11px 14px;font-size:16px;border:1.5px solid #b9b394;border-radius:10px;background:#f3ecdd}
+textarea{min-height:96px;resize:vertical}
+.step{display:flex;align-items:center;gap:14px}
+.step button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--sage);background:#f3ecdd;color:var(--sage);font-size:22px;cursor:pointer}
+.step output{font:600 26px/1 "Playfair Display",serif;min-width:1.4em;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:8px 15px;border:1.5px solid #b9b394;border-radius:999px;background:#f3ecdd;font-size:15px}
+.chips input:checked+span{background:var(--sage);border-color:var(--sage);color:#f6efe0}
+.chips input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.err{color:#a3392c;font-size:15px;min-height:1.2em;margin:4px 0 10px}
+form .btn{width:100%;justify-content:center;border-radius:12px;letter-spacing:.04em;font-size:17px}
+.thanks{text-align:center;background:rgba(244,236,220,.75);border:1px solid #cfc6a8;border-radius:18px;padding:28px 22px}
+.thanks h3{font:600 34px/1.15 "Dancing Script",cursive;color:var(--sage);margin:0 0 10px}
+
+/* footer */
+.end .big{font:600 clamp(38px,10.5vw,52px)/1.25 "Dancing Script",cursive;color:var(--sage);margin:0 0 18px;text-wrap:balance}
+.end .cp{font:clamp(30px,8vw,40px)/1.2 "Dancing Script",cursive;color:var(--sage2)}
+.sw{margin-top:28px;font-size:14px;color:var(--mute)}.sw a{color:var(--sage)}
+
+html.rv .r{opacity:0;transform:translateY(16px);transition:opacity .9s ease,transform .9s ease}
+html.rv .r.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="locked">
+
+<!-- shared drawings -->
+<svg class="defs" aria-hidden="true">
+ <defs>
+  <linearGradient id="fold" x1="0" x2="16" gradientUnits="userSpaceOnUse" spreadMethod="repeat"><stop offset="0" stop-color="#f4ecdc"/><stop offset=".55" stop-color="#dccbac"/><stop offset="1" stop-color="#f4ecdc"/></linearGradient>
+  <linearGradient id="plq" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf6ea"/><stop offset="1" stop-color="#e6dcc4"/></linearGradient>
+  <radialGradient id="prl" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#efe6d2"/><stop offset="1" stop-color="#c3b493"/></radialGradient>
+  <path id="lf" d="M0 0C5-6 14-6 18 0C14 6 5 6 0 0Z"/>
+  <g id="bl"><g fill="#f2d3cb" stroke="#d29c92" stroke-width=".4"><circle cy="-3.4" r="2.8"/><circle cx="3.2" cy="-1" r="2.8"/><circle cx="2" cy="2.8" r="2.8"/><circle cx="-2" cy="2.8" r="2.8"/><circle cx="-3.2" cy="-1" r="2.8"/></g><circle r="1.3" fill="#d6ad55"/></g>
+  <g id="rs"><circle r="6.6" fill="#e6b4aa" stroke="#c48980" stroke-width=".6"/><path d="M-3 .5a3 3 0 1 1 3 3M-1-.8a1.5 1.5 0 1 1 1.6 1.5" fill="none" stroke="#b97a71" stroke-width=".8"/></g>
+  <g id="rc"><circle r="6.6" fill="#f5e7cd" stroke="#c9ad80" stroke-width=".6"/><path d="M-3 .5a3 3 0 1 1 3 3M-1-.8a1.5 1.5 0 1 1 1.6 1.5" fill="none" stroke="#b89a68" stroke-width=".8"/></g>
+  <pattern id="vinep" width="56" height="200" patternUnits="userSpaceOnUse">
+   <path d="M28 0C16 40 40 60 28 100S16 160 28 200" fill="none" stroke="#7d6c4c" stroke-width="1.5"/>
+   <g fill="#5f7350" stroke="#4b5c3f" stroke-width=".5">
+    <use href="#lf" transform="translate(25 16) rotate(-155) scale(1.15)"/><use href="#lf" transform="translate(32 38) rotate(-25) scale(1.15)"/>
+    <use href="#lf" transform="translate(24 66) rotate(-165) scale(1.1)"/><use href="#lf" transform="translate(34 86) rotate(-15) scale(1.15)"/>
+    <use href="#lf" transform="translate(26 116) rotate(-150) scale(1.15)"/><use href="#lf" transform="translate(31 138) rotate(-30) scale(1.1)"/>
+    <use href="#lf" transform="translate(22 164) rotate(-160) scale(1.15)"/><use href="#lf" transform="translate(32 186) rotate(-20) scale(1.1)"/>
+   </g>
+   <use href="#bl" x="14" y="30"/><use href="#bl" x="44" y="70"/><use href="#bl" x="16" y="128"/><use href="#bl" x="44" y="172"/>
+   <use href="#rs" x="30" y="52"/><use href="#rc" x="26" y="152"/>
+  </pattern>
+  <symbol id="sprig" viewBox="0 0 100 160"><path d="M50 160C47 120 55 70 50 6" fill="none" stroke="currentColor" stroke-width="2.4"/>
+   <g fill="currentColor"><use href="#lf" transform="translate(49 136) rotate(-150) scale(2.3)"/><use href="#lf" transform="translate(51 116) rotate(-35) scale(2.3)"/>
+   <use href="#lf" transform="translate(51 92) rotate(-145) scale(2.2)"/><use href="#lf" transform="translate(52 70) rotate(-35) scale(2.1)"/>
+   <use href="#lf" transform="translate(51 48) rotate(-140) scale(1.9)"/><use href="#lf" transform="translate(51 30) rotate(-45) scale(1.7)"/>
+   <use href="#lf" transform="translate(50 8) rotate(-90) scale(1.6)"/></g></symbol>
+  <symbol id="hrt" viewBox="0 0 24 22"><path d="M12 21C5 15 1 11 1 6.5 1 3.5 3.5 1 6.5 1 9 1 11 2.6 12 4.6 13 2.6 15 1 17.5 1 20.5 1 23 3.5 23 6.5 23 11 19 15 12 21Z"/></symbol>
+  <g id="i" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></g>
+  <symbol id="ic-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="ic-shirt" viewBox="0 0 24 24"><path d="M8 3 3 6l2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-car" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 16v-4l2.2-5h13.6L21 12v4z"/><circle cx="7.5" cy="16.5" r="1.9"/><circle cx="16.5" cy="16.5" r="1.9"/></g></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></g></symbol>
+  <symbol id="ic-gift" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4"/><path d="M5 12v9h14v-9M12 8v13M12 8C10 4 6 4 6.5 6.5 7 8 12 8 12 8zm0 0c2-4 6-4 5.5-1.5C17 8 12 8 12 8z"/></g></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+  <symbol id="ic-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></g></symbol>
+  <symbol id="ic-train" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l2-4m6 4-2-4"/></g></symbol>
+  <symbol id="ic-plane" viewBox="0 0 24 24"><path d="M21 15v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V8l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-5.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-on" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6m2.5-8.5a8 8 0 0 1 0 11"/></g></symbol>
+  <symbol id="ic-off" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="m17 9 5 6m0-6-5 6"/></g></symbol>
+  <symbol id="wv" viewBox="0 0 300 22"><path d="M0 11C40 1 60 21 100 11s60-10 100 0 60 10 100 0" fill="none" stroke="currentColor" stroke-width="1.2"/><g fill="currentColor"><circle cx="50" cy="16" r="1.6"/><circle cx="100" cy="4" r="1.6"/><circle cx="150" cy="11" r="1.6"/><circle cx="200" cy="18" r="1.6"/><circle cx="250" cy="5" r="1.6"/></g></symbol>
+ </defs>
+</svg>
+
+<!-- 1 · tap to open -->
+<div id="gate">
+ <div class="door l"><svg id="dl" viewBox="0 0 200 400" preserveAspectRatio="xMidYMid slice"></svg></div>
+ <div class="door r"><svg id="dr" viewBox="0 0 200 400" preserveAspectRatio="xMidYMid slice"></svg></div>
+ <button id="plaque" type="button" aria-label="Tap to open the invitation">
+  <svg viewBox="0 0 200 280" aria-hidden="true">
+   <path id="cart" d="M100 6C112 22 130 26 146 30C150 50 168 60 186 70C178 100 178 120 194 140C178 160 178 180 186 210C168 220 150 230 146 250C130 254 112 258 100 274C88 258 70 254 54 250C50 230 32 220 14 210C22 180 22 160 6 140C22 120 22 100 14 70C32 60 50 50 54 30C70 26 88 22 100 6Z" fill="url(#plq)" stroke="#b08f45" stroke-width="2"/>
+   <use href="#cart" fill="none" stroke="#c4a55c" stroke-width="1.4" transform="translate(100 140) scale(.88) translate(-100 -140)"/>
+   <g fill="none" stroke="#b08f45" stroke-width="1.3" stroke-linecap="round">
+    <path d="M60 52c-8 2-10 12-3 14s9-6 4-8M140 52c8 2 10 12 3 14s-9-6-4-8M60 228c-8-2-10-12-3-14s9 6 4 8M140 228c8-2 10-12 3-14s-9 6-4 8"/>
+    <path d="M30 120c-6 8-6 32 0 40M170 120c6 8 6 32 0 40"/>
+   </g>
+   <g fill="url(#prl)"><circle cx="92" cy="30" r="5"/><circle cx="104" cy="27" r="5.5"/><circle cx="114" cy="33" r="4.5"/><circle cx="88" cy="252" r="4.5"/><circle cx="99" cy="256" r="5.5"/><circle cx="111" cy="250" r="5"/></g>
+   <g fill="#8c7a45" opacity=".85"><use href="#lf" transform="translate(100 222) rotate(-90) scale(1.1)"/><use href="#lf" transform="translate(100 222) rotate(-130)"/><use href="#lf" transform="translate(100 222) rotate(-50)"/></g>
+  </svg>
+  <span class="tx"><span class="mono" data-mono>S &amp; H</span><span class="rule"></span><span class="tap">TAP TO OPEN</span><span class="rule"></span></span>
+ </button>
+</div>
+
+<button id="snd" type="button" aria-label="Mute music" hidden><svg><use href="#ic-on"/></svg></button>
+
+<div class="vine l" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#vinep)"/></svg></div>
+<div class="vine r" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#vinep)"/></svg></div>
+
+<main>
+ <!-- 2 · names -->
+ <header class="hero" id="top">
+  <svg class="cur cl" viewBox="0 0 100 500" preserveAspectRatio="none" aria-hidden="true"><use href="#curtain"/></svg>
+  <svg class="cur cr" viewBox="0 0 100 500" preserveAspectRatio="none" aria-hidden="true"><use href="#curtain"/></svg>
+  <svg class="defs"><defs><g id="curtain">
+   <path d="M0 0H100C96 110 72 230 30 300C42 360 24 440 0 500Z" fill="url(#fold)"/>
+   <path d="M100 0C96 110 72 230 30 300C42 360 24 440 0 500" fill="none" stroke="#c4b08a" stroke-width="7" stroke-dasharray="0 9" stroke-linecap="round" transform="translate(.9 .9)"/>
+   <path d="M100 0C96 110 72 230 30 300C42 360 24 440 0 500" fill="none" stroke="#fbf6ea" stroke-width="6" stroke-dasharray="0 9" stroke-linecap="round"/>
+   <g transform="translate(30 300)"><circle r="7" fill="#d7bd86" stroke="#a88b4f"/><path d="M-5 5-8 38H8L5 5Z" fill="#cfb27a" stroke="#a88b4f" stroke-width=".6"/></g>
+  </g></defs></svg>
+  <svg class="swag" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true">
+   <path d="M0 0H400V14C360 60 300 60 266 20C232 60 168 60 134 20C100 60 40 60 0 14Z" fill="url(#fold)"/>
+   <path d="M0 14C40 60 100 60 134 20C168 60 232 60 266 20C300 60 360 60 400 14" fill="none" stroke="#fbf6ea" stroke-width="5" stroke-dasharray="0 8" stroke-linecap="round"/>
+  </svg>
+  <div class="r">
+   <svg class="ico" style="width:34px;height:31px;fill:var(--sage)" aria-hidden="true"><use href="#hrt"/></svg>
+   <p class="kick">With the blessings of our families</p>
+   <h1>We're getting married</h1>
+   <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  </div>
+  <div class="r">
+   <p class="nm" data-n1>Shakshi</p>
+   <p class="fam" data-f1></p>
+   <p class="amp">&amp;</p>
+   <p class="nm" data-n2>Himanshu</p>
+   <p class="fam" data-f2></p>
+   <span class="tag">#SakshigotHim</span>
+  </div>
+  <svg class="scene" id="scene" viewBox="0 0 400 175" aria-hidden="true"></svg>
+ </header>
+
+ <!-- invitation -->
+ <section class="sec r">
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <p class="lead">With joyful hearts, the <span data-fams>Singhal and Mathur</span> families warmly invite you to the wedding celebrations of <span data-cp>Shakshi &amp; Himanshu</span>.<br><br>As they begin their journey together in faith and love, your presence and blessings will make this occasion truly complete.</p>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- scratch -->
+ <section class="sec r">
+  <h2 class="st">Scratch to Reveal</h2>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <div class="heart">
+   <svg viewBox="0 0 240 220" aria-label="Thursday, 11 February 2027">
+    <path id="hp" d="M120 210C40 150 4 110 4 64 4 30 30 6 62 6c26 0 46 16 58 36 12-20 32-36 58-36 32 0 58 24 58 58 0 46-36 86-116 146Z" fill="#f6efe0" stroke="#b8963e" stroke-width="1.5"/>
+    <text x="120" y="78" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" letter-spacing="3" fill="#6a5a2f">THURSDAY</text>
+    <text x="120" y="116" text-anchor="middle" font-family="Playfair Display,serif" font-weight="600" font-size="30" fill="#3e4c34">11.02.2027</text>
+    <text x="120" y="150" text-anchor="middle" font-family="Dancing Script,cursive" font-size="22" fill="#4b5d3f">Save our date</text>
+   </svg>
+   <canvas id="scratch" aria-hidden="true"></canvas>
+  </div>
+  <p class="sm" id="shint">Scratch the heart with your finger to reveal our date</p>
+  <p><button type="button" id="reveal" class="btn ghost" style="min-height:40px;padding:8px 18px;font-size:13px">Or tap here to reveal</button></p>
+  <a class="btn" id="cal"><svg><use href="#ic-cal"/></svg>SAVE THE DATE</a>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- optional photos -->
+ <section class="sec r" id="photos" hidden><div class="gal" id="gal"></div></section>
+
+ <!-- countdown -->
+ <section class="sec r">
+  <h2 class="st">Counting Down to Forever</h2>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <div class="cd" id="cd" aria-live="off">
+   <div><b data-u="d">00</b><span>DAYS</span></div><div><b data-u="h">00</b><span>HOURS</span></div>
+   <div><b data-u="m">00</b><span>MINUTES</span></div><div><b data-u="s">00</b><span>SECONDS</span></div>
+  </div>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- timeline -->
+ <section class="sec r" id="events">
+  <svg class="ico"><use href="#ic-clock"/></svg>
+  <h2 class="st">Celebrations</h2>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <div class="day">WEDNESDAY, 10 FEB 2027</div>
+  <div class="ev"><time>6:00 PM</time><div><h3>Ring Ceremony &amp; Sangeet</h3><p>An evening of rings, music and dance — bring your best moves!</p></div></div>
+  <div class="gap"></div>
+  <div class="day">THURSDAY, 11 FEB 2027</div>
+  <div class="ev"><time>9:30 AM</time><div><h3>Haldi</h3><p>Turmeric, laughter and blessings — come ready to turn a little yellow.</p></div></div>
+  <div class="ev"><time>6:00 PM</time><div><h3>Baraat</h3><p>Dance along with the groom's procession.</p></div></div>
+  <div class="ev"><time>7:30 PM</time><div><h3>Wedding Ceremony</h3><p>Join us as they take the sacred pheras.</p></div></div>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- venue -->
+ <section class="sec r">
+  <svg class="ico"><use href="#ic-pin"/></svg>
+  <h2 class="st">Venue</h2>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <p class="vn">Ramada by Wyndham Khajuraho</p>
+  <p class="addr">Airport Road, Khajuraho<br>Madhya Pradesh 471606</p>
+  <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Ramada+by+Wyndham+Khajuraho"><svg><use href="#ic-pin"/></svg>Open in Google Maps</a>
+  <p class="sm" style="margin-top:14px">All celebrations take place at the venue.</p>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- dress code -->
+ <section class="sec r">
+  <svg class="ico"><use href="#ic-shirt"/></svg>
+  <h2 class="st">Dress Code</h2>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <p class="vn" style="font-size:22px">Come as you are — in every colour you love!</p>
+  <p class="sm">There's no dress code and no colour rules. Wear whatever makes you feel festive, comfortable and fabulous.</p>
+  <ul class="ticks">
+   <li><b>Haldi:</b> wear something you won't mind getting a splash of yellow on.</li>
+   <li><b>Baraat:</b> comfortable footwear, please — there will be dancing!</li>
+   <li><b>Evenings:</b> February nights in Khajuraho can be chilly, so a shawl or jacket will come in handy.</li>
+  </ul>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- travel -->
+ <section class="sec r">
+  <svg class="ico"><use href="#ic-car"/></svg>
+  <h2 class="st">Travel &amp; Pickup</h2>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <p>We'll be happy to pick you up on arrival in Khajuraho.</p>
+  <div class="card"><h3><svg><use href="#ic-train"/></svg>Khajuraho Railway Station</h3><p>Pickup from the station to the venue.</p></div>
+  <div class="card"><h3><svg><use href="#ic-plane"/></svg>Khajuraho Airport</h3><p>Pickup from the airport, just minutes from the venue.</p></div>
+  <p class="sm" style="margin-top:16px">Please share your arrival details in the RSVP below — we'll send you pickup details closer to the date, as per your travel plans.</p>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- gifts -->
+ <section class="sec r">
+  <svg class="ico"><use href="#ic-gift"/></svg>
+  <h2 class="st">Gifts</h2>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <p class="lead">Your love, blessings and presence are the greatest gifts we could ever ask for.</p>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- rsvp -->
+ <section class="sec r" id="rsvp-sec">
+  <svg class="ico"><use href="#ic-mail"/></svg>
+  <h2 class="st">RSVP</h2>
+  <div class="orn"><i></i><svg><use href="#hrt"/></svg><i></i></div>
+  <p class="sm" style="margin-bottom:26px">Kindly reply by <b>10 January 2027</b> so we can plan your stay and travel.</p>
+  <form id="rsvp" novalidate>
+   <div class="f"><label for="gname">Your name <span class="req">*</span></label><input type="text" id="gname" name="gname" autocomplete="name" placeholder="Your full name"></div>
+   <div class="f"><label for="phone">WhatsApp number <span class="req">*</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+91 98765 43210"><span class="hint">So we can share your pickup and stay details.</span></div>
+   <div class="f"><label for="att">Will you be joining us? <span class="req">*</span></label>
+    <select id="att" name="attending"><option value="">Please choose…</option><option value="Yes">Yes, joyfully!</option><option value="Not sure yet">Not sure yet</option><option value="No">Sorry, I can't make it</option></select></div>
+   <div id="more" hidden>
+    <div class="f"><span class="lb">How many of you will be joining us?</span>
+     <div class="step"><button type="button" id="minus" aria-label="One fewer">−</button><output id="gn">1</output><button type="button" id="plus" aria-label="One more">+</button><span class="sm" id="gl">just me</span></div>
+     <span class="hint">Including yourself — it helps us arrange a comfortable stay for everyone.</span></div>
+    <div class="f"><span class="lb">Which celebrations will you attend?</span>
+     <div class="chips"><label><input type="checkbox" name="ev" value="Ring & Sangeet" checked><span>Ring &amp; Sangeet · 10 Feb</span></label><label><input type="checkbox" name="ev" value="Haldi" checked><span>Haldi · 11 Feb</span></label><label><input type="checkbox" name="ev" value="Baraat & Wedding" checked><span>Baraat &amp; Wedding · 11 Feb</span></label></div></div>
+    <div class="f"><span class="lb">How will you be travelling?</span>
+     <div class="chips"><label><input type="radio" name="arrival" value="Train"><span>Train</span></label><label><input type="radio" name="arrival" value="Flight"><span>Flight</span></label><label><input type="radio" name="arrival" value="By road"><span>By road</span></label><label><input type="radio" name="arrival" value="Not sure yet"><span>Not sure yet</span></label></div></div>
+    <div class="f"><label for="adate">When will you arrive?</label>
+     <select id="adate" name="adate"><option value="">Choose a date…</option><option>9 Feb or earlier</option><option>10 Feb</option><option>11 Feb</option></select></div>
+    <div class="f"><label for="travel">Train / flight number and arrival time</label><input type="text" id="travel" name="travel" placeholder="e.g. 12448, arriving 7:15 AM"><span class="hint">Optional — you can also share this later.</span></div>
+   </div>
+   <div class="f"><label for="msg">Your wishes for the couple</label><textarea id="msg" name="message" placeholder="Write your wishes…"></textarea></div>
+   <p class="err" id="err" role="alert"></p>
+   <button class="btn" type="submit" id="send">Send RSVP</button>
+  </form>
+  <div class="thanks" id="thanks" hidden aria-live="polite"><h3 id="th"></h3><p id="tp"></p><p class="sm" id="tn"></p><a class="btn" id="wa" hidden style="margin:6px 0 14px;letter-spacing:.04em">Send RSVP on WhatsApp</a><button class="btn ghost" type="button" id="again" style="margin-top:8px">Change my reply</button></div>
+ </section>
+ <svg class="wave"><use href="#wv"/></svg>
+
+ <!-- end -->
+ <footer class="sec end r" style="padding-bottom:80px">
+  <p class="big">We can't wait to celebrate with you!</p>
+  <p class="cp" data-cp>Shakshi &amp; Himanshu</p>
+  <span class="tag" style="margin-top:6px">#SakshigotHim</span>
+  <p class="sm" style="margin-top:22px">With love,<br>the <span data-fams>Singhal and Mathur</span> families</p>
+ </footer>
+</main>
+
+<script>
+{
+/* ======= EDIT HERE ======= */
+const CONFIG = {
+  defaultOrder: "groom",   // "bride" = Shakshi first, "groom" = Himanshu first
+  rsvpUrl: "",             // optional: Google Apps Script web-app URL (Excel sheet)
+  whatsapp: { bride: "918839664590", groom: "" },   // RSVP WhatsApp numbers with country code, e.g. "919876543210"
+  musicUrl: "",            // optional: your own song, e.g. "music.mp3"
+  photos: []               // optional: e.g. ["photos/1.jpg","photos/2.jpg"]
+};
+/* ========================= */
+const P = {
+  bride:{name:"Shakshi",i:"S",fam:"Singhal",side:"Bride's side",lines:["Granddaughter of Smt. Kailash Wati &amp; Late Sh. Prem Das Singhal","Daughter of Smt. Vandana &amp; Sh. Sanjay Kumar Singhal"]},
+  groom:{name:"Himanshu",i:"H",fam:"Mathur",side:"Groom's side",lines:["Grandson of Late Smt. Kamlesh &amp; Sh. Pratap Mathur","Son of Smt. Kiran &amp; Sh. Alok Mathur"]}
+};
+const WEDDING = new Date("2027-02-11T19:30:00+05:30").getTime();
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let side = "", order = "bride", couple = "";
+
+function render(){
+  const h = location.hash.slice(1), q = new URLSearchParams(location.search).get("side");
+  const o = (h === "groom-first" || q === "groom") ? "groom" : (h === "bride-first" || q === "bride") ? "bride" : CONFIG.defaultOrder;
+  const A = P[o], B = P[o === "bride" ? "groom" : "bride"];
+  side = A.side; order = o; couple = A.name + " & " + B.name;
+  $$("[data-n1]").forEach(e => e.textContent = A.name);
+  $$("[data-n2]").forEach(e => e.textContent = B.name);
+  $("[data-f1]").innerHTML = A.lines.join("<br>");
+  $("[data-f2]").innerHTML = B.lines.join("<br>");
+  $$("[data-cp]").forEach(e => e.textContent = A.name + " & " + B.name);
+  $$("[data-fams]").forEach(e => e.textContent = A.fam + " and " + B.fam);
+  $$("[data-mono]").forEach(e => e.textContent = A.i + " & " + B.i);
+  document.title = A.name + " & " + B.name + " · Wedding Invitation";
+  const t = encodeURIComponent(A.name + " & " + B.name + " · Wedding Celebrations");
+  const d = encodeURIComponent("Ring & Sangeet: Wed 10 Feb, 6:00 PM\nHaldi: Thu 11 Feb, 9:30 AM\nBaraat: Thu 11 Feb, 6:00 PM\nWedding Ceremony: Thu 11 Feb, 7:30 PM\n#SakshigotHim");
+  $("#cal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + t + "&dates=20270210T123000Z/20270211T180000Z&details=" + d + "&location=" + encodeURIComponent("Ramada by Wyndham Khajuraho, Airport Road, Khajuraho, Madhya Pradesh 471606");
+}
+render();
+addEventListener("hashchange", render);
+
+/* doors */
+const spr = [[40,40,-18,1],[150,24,24,.85],[70,150,-30,1.15],[165,140,18,.8],[25,270,-12,.95],[130,250,28,1.1],[95,360,-40,.9],[175,350,14,.8]];
+const door = m => spr.map(([x,y,r,s]) => `<use href="#sprig" width="100" height="160" transform="translate(${m ? 200 - x : x} ${y}) rotate(${m ? -r : r}) scale(${s}) translate(-50 -80)"/>`).join("");
+$("#dl").innerHTML = door(false);
+$("#dr").innerHTML = door(true);
+
+/* temple garden */
+const spire = (cx,b,w,h) => {
+  let s = `<path class="ss" d="M${cx-w/2} ${b}C${cx-w/2} ${b-h*.55} ${cx-w*.2} ${b-h*.93} ${cx} ${b-h}C${cx+w*.2} ${b-h*.93} ${cx+w/2} ${b-h*.55} ${cx+w/2} ${b}Z"/>`;
+  for (let k = 1; k < 5; k++){ const y = b - h*k/5.4, hw = w/2*(1 - .72*(k/5.4)**2); s += `<path class="bd" d="M${cx-hw} ${y}H${cx+hw}"/>`; }
+  return s + `<ellipse class="ss" cx="${cx}" cy="${b-h-1.5}" rx="${w*.15}" ry="${w*.05+1}"/><path fill="#c9a554" d="M${cx} ${b-h-11}l2.2 8h-4.4z"/>`;
+};
+const cyp = (x,b,h) => `<path fill="#55684a" d="M${x} ${b}C${x-13} ${b-h*.3} ${x-9} ${b-h*.75} ${x} ${b-h}C${x+9} ${b-h*.75} ${x+13} ${b-h*.3} ${x} ${b}Z"/><path fill="none" stroke="#6f8460" stroke-width=".8" d="M${x} ${b-6}V${b-h+10}"/>`;
+const bush = (x,y,rx) => `<ellipse fill="#677b56" cx="${x}" cy="${y}" rx="${rx}" ry="${rx*.55}"/>` + [[-.5,-.15],[0,-.35],[.45,-.1],[-.15,.1],[.3,.2]].map(([a,b]) => `<use href="#bl" x="${x+a*rx}" y="${y+b*rx}"/>`).join("");
+$("#scene").innerHTML =
+  `<style>.ss{fill:#ecdfc4;stroke:#9c8a66;stroke-width:.8}.bd{stroke:#b9a782;stroke-width:.6}</style>` +
+  `<path fill="#cdd5ba" d="M0 160C80 150 140 156 200 152S330 150 400 158V175H0Z"/>` +
+  spire(200,122,62,94) + spire(171,122,36,62) + spire(229,122,36,62) + spire(151,124,24,40) + spire(249,124,24,40) +
+  `<rect class="ss" x="138" y="122" width="124" height="24"/>` + [150,166,182,218,234,250].map(x => `<path class="bd" d="M${x} 124V146"/>`).join("") +
+  `<path class="ss" d="M188 146V130Q200 120 212 130V146Z" style="fill:#d8c7a2"/><rect class="ss" x="122" y="146" width="156" height="8"/><rect class="ss" x="112" y="154" width="176" height="6"/>` +
+  cyp(34,166,118) + cyp(62,166,90) + cyp(338,166,90) + cyp(366,166,118) +
+  bush(18,166,22) + bush(88,168,18) + bush(312,168,18) + bush(382,166,22) +
+  `<use href="#rs" x="70" y="160"/><use href="#rc" x="330" y="160"/><use href="#rs" x="8" y="156"/><use href="#rc" x="394" y="156"/>`;
+
+/* music */
+let ac = null, master = null, timer = null, nextT = 0, step = 0, playing = false, audio = null;
+const MEL = [66,69,74,69,76,74,69,66, 64,66,69,66,71,69,66,64, 66,69,74,76,78,76,74,69, 71,69,66,64,62,0,0,0];
+const BASS = [50,47,43,45];
+function tone(m,t,dur,v){
+  const f = 440 * 2 ** ((m - 69) / 12);
+  [[1,v],[2,v*.25],[3,v*.08]].forEach(([k,g0]) => {
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = "sine"; o.frequency.value = f * k;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(g0, t + .012); g.gain.exponentialRampToValueAtTime(.0001, t + dur / k);
+    o.connect(g); g.connect(master); o.start(t); o.stop(t + dur + .1);
+  });
+}
+function sched(){
+  while (nextT < ac.currentTime + .4){
+    const m = MEL[step % 32];
+    if (m) tone(m, nextT, 1.6, .09);
+    if (step % 8 === 0) tone(BASS[Math.floor(step / 8) % 4], nextT, 3, .06);
+    nextT += .34; step++;
+  }
+}
+function startMusic(){
+  try{
+    if (CONFIG.musicUrl){ audio = audio || Object.assign(new Audio(CONFIG.musicUrl), {loop:true, volume:.6}); audio.play().catch(() => {}); }
+    else {
+      if (!ac){
+        ac = new (window.AudioContext || window.webkitAudioContext)();
+        master = ac.createGain(); master.gain.value = .8;
+        const dl = ac.createDelay(), fb = ac.createGain(); dl.delayTime.value = .36; fb.gain.value = .32;
+        master.connect(ac.destination); master.connect(dl); dl.connect(fb); fb.connect(dl); dl.connect(ac.destination);
+      }
+      ac.resume(); nextT = ac.currentTime + .1; timer = setInterval(sched, 120);
+    }
+    playing = true; setSnd();
+  }catch(e){}
+}
+function stopMusic(){ if (audio) audio.pause(); if (timer) clearInterval(timer); timer = null; if (ac) ac.suspend(); playing = false; setSnd(); }
+function setSnd(){ const b = $("#snd"); b.hidden = false; b.querySelector("use").setAttribute("href", playing ? "#ic-on" : "#ic-off"); b.setAttribute("aria-label", playing ? "Mute music" : "Play music"); }
+$("#snd").addEventListener("click", () => playing ? stopMusic() : startMusic());
+
+/* gate */
+let opened = false;
+$("#plaque").addEventListener("click", () => {
+  if (opened) return; opened = true;
+  startMusic();
+  $("#gate").classList.add("open");
+  setTimeout(() => { $("#gate").hidden = true; $("#gate").style.pointerEvents = "none"; document.body.classList.remove("locked"); }, reduce ? 200 : 1700);
+});
+
+/* reveal on scroll + vines after hero */
+if ("IntersectionObserver" in window){
+  document.documentElement.classList.add("rv");
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+  $$(".r").forEach(el => io.observe(el));
+  new IntersectionObserver(([e]) => document.body.classList.toggle("vines", !e.isIntersecting), {threshold:.08}).observe($("#top"));
+} else document.body.classList.add("vines");
+
+/* scratch card */
+const cv = $("#scratch"), HEART = $("#hp").getAttribute("d");
+let cx2 = null, full = 0, moves = 0, last = null, done = false;
+function drawCover(){
+  const r = cv.getBoundingClientRect(); if (!r.width) return;
+  const d = devicePixelRatio || 1;
+  cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d);
+  cx2 = cv.getContext("2d");
+  cx2.setTransform(cv.width / 240, 0, 0, cv.height / 220, 0, 0);
+  const hp = new Path2D(HEART);
+  const g = cx2.createRadialGradient(105, 70, 8, 120, 105, 150);
+  g.addColorStop(0, "#e9eedd"); g.addColorStop(.45, "#a3b48d"); g.addColorStop(1, "#66784f");
+  cx2.fillStyle = g; cx2.fill(hp);
+  cx2.save(); cx2.clip(hp);
+  for (let i = 0; i < 1100; i++){ cx2.fillStyle = Math.random() < .55 ? "rgba(255,255,255,.75)" : "rgba(55,70,45,.4)"; const s = Math.random() * 1.6 + .4; cx2.fillRect(Math.random() * 240, Math.random() * 220, s, s); }
+  cx2.restore();
+  cx2.strokeStyle = "#5d6f4d"; cx2.lineWidth = 1.4; cx2.stroke(hp);
+  full = opaque();
+  cx2.globalCompositeOperation = "destination-out"; cx2.lineCap = "round"; cx2.lineJoin = "round"; cx2.lineWidth = 34;
+}
+function opaque(){ const a = cx2.getImageData(0, 0, cv.width, cv.height).data; let n = 0; for (let i = 3; i < a.length; i += 64) if (a[i] > 20) n++; return n; }
+function pt(e){ const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) * 240 / r.width, (e.clientY - r.top) * 220 / r.height]; }
+function reveal(){ if (done) return; done = true; cv.classList.add("done"); $("#shint").textContent = "See you on Thursday, 11 February 2027!"; $("#reveal").hidden = true; }
+let drawing = false;
+function scratch(e){
+  if (!cx2 || done) return;
+  const p = pt(e);
+  cx2.beginPath(); cx2.moveTo(...(last || [p[0] - .1, p[1]])); cx2.lineTo(...p); cx2.stroke();
+  last = p;
+  if (++moves % 6 === 0 && full && opaque() / full < .62) reveal();
+}
+const begin = e => { if (!cx2 || !cv.width) drawCover(); drawing = true; last = null; scratch(e); };
+const end = () => { drawing = false; last = null; };
+cv.addEventListener("pointerdown", e => { e.preventDefault(); begin(e); });
+cv.addEventListener("pointermove", e => { if (drawing){ e.preventDefault(); scratch(e); } });
+cv.addEventListener("touchstart", e => { e.preventDefault(); begin(e.touches[0]); }, {passive:false});
+cv.addEventListener("touchmove", e => { e.preventDefault(); scratch(e.touches[0]); }, {passive:false});
+["pointerup","pointercancel","touchend","touchcancel"].forEach(t => addEventListener(t, end));
+$("#reveal").addEventListener("click", reveal);
+drawCover();
+addEventListener("load", () => { if (!done && !moves) drawCover(); });
+addEventListener("resize", () => { if (!done && !moves) drawCover(); });
+if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { if (e.isIntersecting && !done && !moves) drawCover(); }).observe(cv);
+
+/* countdown */
+const pad = n => String(n).padStart(2, "0");
+function tick(){
+  let s = Math.max(0, Math.floor((WEDDING - Date.now()) / 1000));
+  const v = {d: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60};
+  $$("#cd [data-u]").forEach(b => b.textContent = b.dataset.u === "d" ? v.d : pad(v[b.dataset.u]));
+}
+tick(); setInterval(tick, 1000);
+
+/* photos */
+if (CONFIG.photos.length){ $("#photos").hidden = false; $("#gal").innerHTML = CONFIG.photos.map(src => `<img src="${src}" alt="" loading="lazy">`).join(""); }
+
+/* rsvp */
+const f = $("#rsvp"), att = $("#att"), more = $("#more"), err = $("#err");
+let n = 1;
+const setN = v => { n = Math.max(1, Math.min(15, v)); $("#gn").textContent = n; $("#gl").textContent = n === 1 ? "just me" : "in total"; };
+$("#minus").addEventListener("click", () => setN(n - 1));
+$("#plus").addEventListener("click", () => setN(n + 1));
+att.addEventListener("change", () => { more.hidden = !(att.value === "Yes" || att.value === "Not sure yet"); });
+f.addEventListener("submit", async e => {
+  e.preventDefault(); err.textContent = "";
+  const name = f.elements.gname.value.trim(), phone = f.elements.phone.value.trim(), a = att.value;
+  if (!name){ err.textContent = "Please tell us your name."; f.elements.gname.focus(); return; }
+  if (phone.replace(/\D/g, "").length < 10){ err.textContent = "Please add a valid WhatsApp number."; f.elements.phone.focus(); return; }
+  if (!a){ err.textContent = "Please let us know if you'll be joining us."; att.focus(); return; }
+  const going = a !== "No";
+  const data = {
+    name, phone, attending: a, guests: going ? n : 0,
+    events: going ? $$("input[name=ev]:checked").map(c => c.value).join(", ") : "",
+    arrival: going ? (f.querySelector("input[name=arrival]:checked") || {}).value || "" : "",
+    arrivalDate: going ? f.elements.adate.value : "",
+    travel: going ? f.elements.travel.value.trim() : "",
+    message: f.elements.message.value.trim(), side
+  };
+  const btn = $("#send"); btn.disabled = true; btn.textContent = "Sending…";
+  try{
+    if (CONFIG.rsvpUrl) await fetch(CONFIG.rsvpUrl, {method:"POST", mode:"no-cors", body:new URLSearchParams(data)});
+    const first = name.split(" ")[0];
+    $("#th").textContent = a === "Yes" ? "Thank you, " + first + "!" : a === "No" ? "We'll miss you, " + first : "Thank you, " + first;
+    $("#tp").textContent = a === "Yes" ? "We can't wait to celebrate with you" + (n > 1 ? " and your family" : "") + ". We'll be in touch on WhatsApp about your stay and pickup."
+      : a === "No" ? "Thank you for letting us know. Your love and blessings mean the world to us."
+      : "Thank you for letting us know. Please update your reply once your plans are confirmed.";
+    const num = (CONFIG.whatsapp[order] || CONFIG.whatsapp.bride || CONFIG.whatsapp.groom || "").replace(/\D/g, "");
+    const wa = $("#wa");
+    if (num){
+      const lines = ["RSVP · " + couple + "'s wedding", "", "Name: " + name, "WhatsApp: " + phone, "Attending: " + (a === "Yes" ? "Yes, joyfully!" : a === "No" ? "Sorry, can't make it" : "Not sure yet")];
+      if (going){
+        lines.push("Guests (incl. me): " + n);
+        if (data.events) lines.push("Celebrations: " + data.events);
+        if (data.arrival || data.arrivalDate) lines.push("Travelling: " + [data.arrival, data.arrivalDate && "arriving " + data.arrivalDate].filter(Boolean).join(", "));
+        if (data.travel) lines.push("Travel details: " + data.travel);
+      }
+      if (data.message) lines.push("", "Wishes: " + data.message);
+      lines.push("", "(" + side + " invite)");
+      wa.href = "https://wa.me/" + num + "?text=" + encodeURIComponent(lines.join("\n"));
+      wa.hidden = false;
+      $("#tn").textContent = "One last step: tap the button to send your reply to us on WhatsApp.";
+    } else { wa.hidden = true; $("#tn").textContent = CONFIG.rsvpUrl ? "" : "Preview only — replies are not being sent yet."; }
+    f.hidden = true; $("#thanks").hidden = false;
+    $("#rsvp-sec").scrollIntoView({behavior: reduce ? "auto" : "smooth"});
+  }catch(x){ err.textContent = "We couldn't send your reply. Please check your connection and try again."; }
+  btn.disabled = false; btn.textContent = "Send RSVP";
+});
+$("#again").addEventListener("click", () => { $("#thanks").hidden = true; f.hidden = false; });
+}
+</script>
+</body>
+</html>

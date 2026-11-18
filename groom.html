@@ -7,18 +7,18 @@
 <meta name="description" content="You're invited to the wedding of Shakshi & Himanshu · 11 February 2027 · Khajuraho">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Dancing+Script:wght@500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 /* VOICE: tender, festive, formal — a keepsake, not a website.
    IDEA: an embossed sage card that opens like doors onto a draped stage.
    PICTURE: curtains + a Khajuraho temple garden (the venue's own landmark).
-   COLOUR and TYPE: sage, linen, blush, gold; Pinyon/Dancing script, Playfair, Lora.
+   COLOUR and TYPE: sage, linen, blush, gold; Great Vibes names, Cormorant Garamond headings, Lora text.
    LAYOUT: one 560px phone column, vine borders, centred sections. */
 :root{color-scheme:light;--sage:#4b5d3f;--sage2:#6b7d5a;--sage3:#97a785;--ink:#34412c;--mute:#66705a;--linen:#e8dfca;--cream:#f4ecdc;--gold:#b8963e;--blush:#e8bdb4}
 *{box-sizing:border-box;min-width:0}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);font:17px/1.6 Lora,Georgia,serif;overflow-x:clip;background-color:var(--linen);
+body{margin:0;color:var(--ink);font:16.5px/1.65 Lora,Georgia,serif;font-variant-numeric:lining-nums;overflow-x:clip;background-color:var(--linen);
  background-image:repeating-linear-gradient(0deg,rgba(110,90,50,.05) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(110,90,50,.045) 0 1px,transparent 1px 4px)}
 body.locked{overflow:hidden;height:100svh}
 .defs{position:absolute;width:0;height:0;overflow:hidden}
@@ -36,8 +36,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 #plaque{position:relative;z-index:2;width:min(62vw,236px);aspect-ratio:200/280;border:0;background:none;padding:0;cursor:pointer;transition:opacity .6s,transform .6s;filter:drop-shadow(0 10px 18px rgba(30,40,20,.35));animation:breathe 3.2s ease-in-out infinite}
 #plaque svg{position:absolute;inset:0;width:100%;height:100%}
 #plaque .tx{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:6px;color:#5a5a3a}
-#plaque .mono{font:500 40px/1 "Playfair Display",Georgia,serif;color:var(--sage);letter-spacing:.02em}#plaque .mono em{font:normal 34px/1 "Pinyon Script",cursive;color:var(--gold);margin:0 6px}
-#plaque .tap{font:600 15px/1 "Playfair Display",serif;letter-spacing:.14em;color:#6b5a2e}
+#plaque .mono{font:600 48px/1 "Cormorant Garamond",Georgia,serif;color:var(--sage);letter-spacing:.02em}#plaque .mono em{font:italic 500 42px/1 "Cormorant Garamond",Georgia,serif;color:var(--gold);margin:0 5px}
+#plaque .tap{font:700 15px/1 "Cormorant Garamond",Georgia,serif;letter-spacing:.22em;color:#6b5a2e}
 #plaque .rule{width:56%;height:1px;background:linear-gradient(90deg,transparent,#a88a45,transparent)}
 #gate.open #plaque{opacity:0;transform:scale(.85);animation:none}
 @keyframes breathe{50%{transform:scale(1.035)}}
@@ -62,22 +62,22 @@ main{position:relative;max-width:600px;margin:0 auto}
 .cur{position:absolute;top:0;height:74%;width:min(15%,130px)}.cur.cl{left:0}.cur.cr{right:0;transform:scaleX(-1)}
 .swag{position:absolute;top:0;left:0;width:100%;height:76px}
 .scene{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto}
-.hero .kick{font:italic 500 19px/1.3 "Cormorant Garamond",serif;color:var(--mute);margin:16px 0 4px}
-.hero h1{font:500 clamp(28px,7.4vw,38px)/1.1 "Playfair Display",serif;color:var(--sage);margin:0}
-.nm{font:clamp(66px,19vw,104px)/1 "Pinyon Script",cursive;color:var(--sage);margin:22px 0 6px}
-.fam{font:italic 500 clamp(16px,4.3vw,19px)/1.45 "Cormorant Garamond",serif;color:var(--mute);margin:0}
-.amp{font:clamp(40px,11vw,56px)/1 "Pinyon Script",cursive;color:var(--gold);margin:14px 0 0}
-.tag{display:inline-block;margin-top:22px;font:600 15px/1 "Playfair Display",serif;color:var(--gold);letter-spacing:.06em}
+.hero .kick{font:italic 500 20px/1.3 "Cormorant Garamond",Georgia,serif;color:var(--mute);margin:16px 0 4px}
+.hero h1{font:600 clamp(30px,8vw,39px)/1.1 "Cormorant Garamond",Georgia,serif;color:var(--sage);margin:0}
+.nm{font:clamp(56px,15.5vw,80px)/1.15 "Great Vibes",cursive;color:var(--sage);margin:18px 0 8px}
+.fam{font:italic 400 14.5px/1.65 Lora,Georgia,serif;color:var(--mute);margin:0}
+.amp{font:italic 500 clamp(38px,10vw,50px)/1 "Cormorant Garamond",Georgia,serif;color:var(--gold);margin:14px 0 0}
+.tag{display:inline-block;margin-top:22px;font:italic 500 16px/1 Lora,Georgia,serif;color:var(--gold);letter-spacing:.02em}
 
 /* common */
 .ico{width:38px;height:38px;color:var(--sage);margin:0 auto 6px}
-.st{font:600 clamp(36px,10vw,48px)/1.1 "Dancing Script",cursive;color:var(--sage);margin:0;text-wrap:balance}
+.st{font:600 clamp(32px,9vw,42px)/1.15 "Cormorant Garamond",Georgia,serif;letter-spacing:.01em;color:var(--sage);margin:0;text-wrap:balance}
 .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px auto 26px;color:var(--sage3)}
 .orn i{width:80px;height:1px;background:currentColor}.orn svg{width:14px;height:13px;fill:currentColor}
 .wave{display:block;width:76%;max-width:420px;height:22px;margin:0 auto;color:var(--sage3);position:relative;z-index:2}
-.lead{font:italic 500 clamp(21px,5.6vw,25px)/1.65 "Cormorant Garamond",serif;color:#3e4a35;margin:0}
+.lead{font:italic 500 clamp(20px,5.4vw,23px)/1.6 "Cormorant Garamond",Georgia,serif;color:#3e4a35;margin:0}
 p{margin:0 0 12px}.sm{font-size:15px;color:var(--mute)}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 26px;border:0;border-radius:999px;background:var(--sage);color:#f6efe0;font:600 14px/1 "Playfair Display",serif;letter-spacing:.16em;text-decoration:none;cursor:pointer;box-shadow:0 8px 18px rgba(50,65,40,.25)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 26px;border:0;border-radius:999px;background:var(--sage);color:#f6efe0;font:600 14px/1 Lora,Georgia,serif;letter-spacing:.12em;text-decoration:none;cursor:pointer;box-shadow:0 8px 18px rgba(50,65,40,.25)}
 .btn svg{width:20px;height:20px}
 .btn.ghost{background:transparent;color:var(--sage);border:1.5px solid var(--sage);box-shadow:none;letter-spacing:.06em}
 
@@ -89,28 +89,28 @@ p{margin:0 0 12px}.sm{font-size:15px;color:var(--mute)}
 
 /* countdown */
 .cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:380px;margin:0 auto}
-.cd b{display:block;padding:14px 0 10px;border:1px solid #c9bf9f;border-radius:12px;background:rgba(210,198,165,.35);font:600 clamp(26px,7vw,34px)/1 "Playfair Display",serif;font-variant-numeric:tabular-nums}
-.cd span{display:block;margin-top:8px;font:13px/1 Lora,serif;letter-spacing:.08em;color:var(--mute)}
+.cd b{font-variant-numeric:lining-nums tabular-nums;display:block;padding:14px 0 10px;border:1px solid #c9bf9f;border-radius:12px;background:rgba(210,198,165,.35);font:600 clamp(25px,7vw,31px)/1 Lora,Georgia,serif;font-variant-numeric:tabular-nums}
+.cd span{display:block;margin-top:8px;font:12.5px/1 Lora,serif;letter-spacing:.08em;color:var(--mute)}
 
 /* gallery */
 .gal{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px}
 .gal img{flex:none;width:86%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;scroll-snap-align:center;border:6px solid #efe2d8}
 
 /* timeline */
-.day{display:flex;align-items:center;gap:12px;margin:8px 0 18px;font:600 15px/1.2 "Playfair Display",serif;letter-spacing:.12em;color:var(--ink)}
+.day{display:flex;align-items:center;gap:12px;margin:8px 0 18px;font:600 13.5px/1.2 Lora,Georgia,serif;letter-spacing:.14em;color:var(--ink)}
 .day::before,.day::after{content:"";flex:1;height:1px;background:#a9ab8c}
 .ev{display:grid;grid-template-columns:5.6em minmax(0,1fr);text-align:left;margin-bottom:22px}
-.ev time{font:600 17px/1.5 "Playfair Display",serif;white-space:nowrap;padding-right:14px;text-align:right}
+.ev time{font:600 15.5px/1.75 Lora,Georgia,serif;white-space:nowrap;padding-right:14px;text-align:right}
 .ev div{border-left:1px solid #a9ab8c;padding-left:16px}
-.ev h3{font:600 21px/1.25 "Playfair Display",serif;color:var(--sage);margin:0 0 3px}
+.ev h3{font:600 23px/1.2 "Cormorant Garamond",Georgia,serif;color:var(--sage);margin:0 0 3px}
 .ev p{font-size:15.5px;color:var(--mute);margin:0}
 .gap{height:18px}
 
 /* venue */
-.vn{font:600 clamp(24px,6.5vw,30px)/1.2 "Playfair Display",serif;color:#2f3a28;margin:0 0 6px}
+.vn{font:600 clamp(26px,7vw,32px)/1.2 "Cormorant Garamond",Georgia,serif;color:#2f3a28;margin:0 0 6px}
 .addr{color:var(--mute);margin-bottom:22px}
 .card{background:rgba(244,236,220,.7);border:1px solid #cfc6a8;border-radius:16px;padding:18px 18px 16px;text-align:left;margin:0 auto 14px;max-width:420px}
-.card h3{font:600 18px/1.3 "Playfair Display",serif;color:var(--sage);margin:0 0 4px;display:flex;align-items:center;gap:10px}
+.card h3{font:600 20px/1.3 "Cormorant Garamond",Georgia,serif;color:var(--sage);margin:0 0 4px;display:flex;align-items:center;gap:10px}
 .card h3 svg{width:22px;height:22px;flex:none}
 .card p{font-size:15.5px;margin:0;color:#4b5642}
 .ticks{list-style:none;padding:0;margin:18px auto 0;max-width:420px;text-align:left}
@@ -121,14 +121,14 @@ p{margin:0 0 12px}.sm{font-size:15px;color:var(--mute)}
 /* form */
 form,.thanks{max-width:420px;margin:0 auto;text-align:left}
 .f{margin-bottom:18px}
-.f>label,.f>.lb{display:block;font:600 16px/1.3 "Playfair Display",serif;margin-bottom:7px}
+.f>label,.f>.lb{display:block;font:600 15px/1.35 Lora,Georgia,serif;margin-bottom:7px}
 .f .req{color:#b4493b}
 .hint{display:block;font-size:13.5px;color:var(--mute);margin-top:6px;line-height:1.45}
 input[type=text],input[type=tel],select,textarea{width:100%;min-height:48px;padding:11px 14px;font-size:16px;border:1.5px solid #b9b394;border-radius:10px;background:#f3ecdd}
 textarea{min-height:96px;resize:vertical}
 .step{display:flex;align-items:center;gap:14px}
 .step button{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--sage);background:#f3ecdd;color:var(--sage);font-size:22px;cursor:pointer}
-.step output{font:600 26px/1 "Playfair Display",serif;min-width:1.4em;text-align:center}
+.step output{font:600 26px/1 Lora,Georgia,serif;min-width:1.4em;text-align:center}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips label{position:relative}
 .chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
@@ -138,11 +138,11 @@ textarea{min-height:96px;resize:vertical}
 .err{color:#a3392c;font-size:15px;min-height:1.2em;margin:4px 0 10px}
 form .btn{width:100%;justify-content:center;border-radius:12px;letter-spacing:.04em;font-size:17px}
 .thanks{text-align:center;background:rgba(244,236,220,.75);border:1px solid #cfc6a8;border-radius:18px;padding:28px 22px}
-.thanks h3{font:600 34px/1.15 "Dancing Script",cursive;color:var(--sage);margin:0 0 10px}
+.thanks h3{font:600 30px/1.2 "Cormorant Garamond",Georgia,serif;color:var(--sage);margin:0 0 10px}
 
 /* footer */
-.end .big{font:600 clamp(38px,10.5vw,52px)/1.25 "Dancing Script",cursive;color:var(--sage);margin:0 0 18px;text-wrap:balance}
-.end .cp{font:clamp(30px,8vw,40px)/1.2 "Dancing Script",cursive;color:var(--sage2)}
+.end .big{font:clamp(40px,11vw,54px)/1.25 "Great Vibes",cursive;color:var(--sage);margin:0 0 18px;text-wrap:balance}
+.end .cp{font:clamp(32px,8.5vw,40px)/1.2 "Great Vibes",cursive;color:var(--sage2)}
 .sw{margin-top:28px;font-size:14px;color:var(--mute)}.sw a{color:var(--sage)}
 
 #cue{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));z-index:40;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 18px 6px;border:0;border-radius:999px;background:rgba(244,236,220,.92);color:var(--sage);font:500 14px/1.2 Lora,serif;letter-spacing:.04em;box-shadow:0 6px 16px rgba(50,65,40,.2);cursor:pointer;transition:opacity .5s}
@@ -272,9 +272,9 @@ html.rv .r.in{opacity:1;transform:none}
   <div class="heart">
    <svg viewBox="0 0 240 220" aria-label="Thursday, 11 February 2027">
     <path id="hp" d="M120 210C40 150 4 110 4 64 4 30 30 6 62 6c26 0 46 16 58 36 12-20 32-36 58-36 32 0 58 24 58 58 0 46-36 86-116 146Z" fill="#f6efe0" stroke="#b8963e" stroke-width="1.5"/>
-    <text x="120" y="78" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" letter-spacing="3" fill="#6a5a2f">THURSDAY</text>
-    <text x="120" y="116" text-anchor="middle" font-family="Playfair Display,serif" font-weight="600" font-size="30" fill="#3e4c34">11.02.2027</text>
-    <text x="120" y="150" text-anchor="middle" font-family="Dancing Script,cursive" font-size="22" fill="#4b5d3f">Save our date</text>
+    <text x="120" y="78" text-anchor="middle" font-family="Cormorant Garamond,serif" font-weight="700" font-size="14" letter-spacing="3.5" fill="#6a5a2f">THURSDAY</text>
+    <text x="120" y="116" text-anchor="middle" font-family="Lora,serif" font-weight="600" font-size="28" fill="#3e4c34">11.02.2027</text>
+    <text x="120" y="150" text-anchor="middle" font-family="Great Vibes,cursive" font-size="26" fill="#4b5d3f">Save our date</text>
    </svg>
    <canvas id="scratch" aria-hidden="true"></canvas>
   </div>

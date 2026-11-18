@@ -189,11 +189,11 @@ main>section:nth-of-type(5){background:linear-gradient(180deg,transparent,var(--
 footer.sec{padding:40px 28px 120px}
 .ty{font-size:21px;margin-top:0}
 
-#open{background:#efe0d0;gap:0}
-.obg{position:absolute;left:50%;top:50%;height:100%;aspect-ratio:480/853;min-width:100%;transform:translate(-50%,-50%);background:url(img/tpl-arch.jpg) center/cover;transition:transform 1.6s cubic-bezier(.6,0,.2,1),filter 1.6s}
+#open{background:#f8e6e4;gap:0}
+.obg{position:absolute;left:50%;top:50%;width:min(100vw,calc(100svh*956/1280));aspect-ratio:956/1280;transform:translate(-50%,-50%);background:url(img/tpl-elephant2.jpg) center/100% 100%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);z-index:1;transition:transform 1.6s cubic-bezier(.6,0,.2,1),filter 1.6s}
 #gcard{position:absolute;inset:0;width:auto;aspect-ratio:auto;background:none;box-shadow:none;border-radius:0;animation:none;z-index:2}
-.otx{position:absolute;left:0;right:0;top:70%;text-align:center;z-index:1;pointer-events:none}
-.onm{font:400 clamp(30px,8.6vw,38px)/1.1 "Great Vibes",cursive;color:#7a5a2a;margin:0 0 10px}
+.otx{z-index:3;position:absolute;left:0;right:0;top:calc(50% - min(100vw,calc(100svh*956/1280))*1280/956*.17);text-align:center;z-index:1;pointer-events:none}
+.onm{font:400 clamp(28px,8vw,38px)/1.15 "Great Vibes",cursive;color:#9b3d52;max-width:min(46vw,calc(100svh*.27));margin-left:auto!important;margin-right:auto!important;margin:0 0 10px}
 #open .tapl{color:#8a6a3a;font-size:19px}
 #open.go .obg{transform:translate(-50%,-50%) scale(1.6);filter:blur(10px)}
 #open.go #gcard{transform:none;opacity:0}
@@ -217,6 +217,23 @@ footer.sec{padding:40px 28px 120px}
 .ein .ev{padding:6px 0}.ein .ev h3{font-size:15.5px;margin:0 0 1px}.ein .ev p{font-size:13.5px}
 .ein .ev::before{left:-20px;top:13px;width:7px;height:7px}
 .ein .rail{left:5px}.ein .plane{left:-8px;width:20px;height:24px}
+
+.gpg{position:relative;min-height:100svh;display:grid;place-items:center;padding:20px 14px;background:#fdfbf8}
+.gpg img{display:block;width:100%;max-width:460px;height:auto;max-height:calc(100svh - 40px);object-fit:contain;box-shadow:0 14px 34px rgba(150,110,60,.15)}
+body.shown .gpg img{animation:zin 2.6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes zin{0%{opacity:0;transform:scale(.6);filter:blur(12px)}60%{opacity:1;filter:blur(2px)}100%{opacity:1;transform:none;filter:none}}
+
+.oblur{position:absolute;inset:-40px;background:url(img/tpl-elephant2.jpg) center/cover;filter:blur(22px) brightness(1.06) saturate(.9);opacity:.9}
+#open.go .oblur{opacity:0;transition:opacity 1.2s}
+body{background:#fbf5f0}
+body::before{background:radial-gradient(90% 40% at 50% 0%,#fff 0%,transparent 70%),linear-gradient(180deg,#fbf7f3,#fbefec 45%,#fbf5ef)}
+.gpg{background:transparent}
+.gpg img{box-shadow:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
+.tcard{box-shadow:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
+.ecard{box-shadow:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
+main>section:nth-of-type(n){background:none!important}
+.sec{padding-top:56px;padding-bottom:56px}
+.fam,.dcard{box-shadow:none}
 html.rv .r{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
 html.rv .r.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}#petals{display:none}}
@@ -237,7 +254,7 @@ html.rv .r.in{opacity:1;transform:none}
 <div id="shower" aria-hidden="true"></div>
 
 <div id="open" role="dialog" aria-label="Wedding invitation">
- <div class="obg"></div>
+ <div class="oblur"></div><div class="obg"></div>
  <button id="gcard" type="button" aria-label="Tap to open the invitation"></button>
  <div class="otx"><p class="onm" data-mono>Shakshi &amp; Himanshu</p><p class="tapl">Tap to open</p></div>
 </div>
@@ -245,10 +262,10 @@ html.rv .r.in{opacity:1;transform:none}
 <button id="snd" type="button" aria-label="Play music" hidden><i></i><i></i><i></i><i></i></button>
 
 <main>
+ <section class="gpg"><img src="img/tpl-ganesha.jpg" alt="Om Shree Ganeshay Namah"></section>
  <header class="sec hero">
   <div class="tcard">
    <div class="tin">
-    <p class="mantra">॥ श्री गणेशाय नमः ॥</p>
     <p class="host" data-host></p>
     <p class="req" data-req></p>
     <p class="nm" data-n1>Shakshi</p>
@@ -434,7 +451,7 @@ $("#snd").addEventListener("click", () => playing ? stopMusic() : startMusic());
 let opened = false;
 const openIt = () => {
   if (opened) return; opened = true; startMusic();
-  $("#open").classList.add("go");
+  $("#open").classList.add("go"); setTimeout(() => document.body.classList.add("shown"), reduce ? 0 : 700);
   setTimeout(() => { $("#open").hidden = true; document.body.classList.remove("locked"); }, reduce ? 200 : 1700);
 };
 $("#gcard").addEventListener("click", openIt);

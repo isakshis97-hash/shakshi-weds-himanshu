@@ -231,7 +231,7 @@ body::before{background:radial-gradient(90% 40% at 50% 0%,#fff 0%,transparent 70
 .gpg img{box-shadow:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
 .tcard{box-shadow:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
 .ecard{box-shadow:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 95%,transparent);mask-composite:intersect}
-main>section:nth-of-type(n){background:none!important}
+main>section:nth-of-type(n):not(.dsec):not(.rsec){background:none!important}
 .gpg{background:none}
 .sec{padding-top:56px;padding-bottom:56px}
 .fam,.dcard{box-shadow:none}
@@ -347,6 +347,30 @@ footer.fr .ty{margin-top:0}
 .fr .kick{font-size:24px}.fr .st{font-size:clamp(22px,6.4vw,28px)}
 .fr .dn{font-size:clamp(46px,13vw,62px)}
 .fr .cd b{font-size:clamp(17px,5vw,22px)!important;padding:7px 0!important}
+
+/* page 3 arch */
+.a1{--W:min(100vw,500px);border-style:solid;border-width:calc(var(--W)*.5) calc(var(--W)*.1) calc(var(--W)*.66);border-image:url(img/tpl-arch1.jpg) 512 100 676 fill / calc(var(--W)*.5) calc(var(--W)*.1) calc(var(--W)*.66) stretch;padding:0 calc(var(--W)*.04)!important;margin:10px 0}
+.a1 .tcard{margin:calc(var(--W)*-.17) auto calc(var(--W)*-.2)!important;max-width:86%!important}
+.a1 .tin .nm{color:#7a1f2b!important}
+/* venue */
+.vsec{padding:20px 0!important}
+.vcard{position:relative;width:100%;max-width:500px;margin:0 auto;aspect-ratio:900/1600;background:url(img/tpl-venue.jpg) center/100% 100% no-repeat}
+.vin{position:absolute;left:10%;right:10%;top:22%;bottom:30%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.vin .kick{color:#7a4a3a;font-size:28px}.vin .vn{color:#4a2a24;font-size:23px}.vin .vp,.vin .note{color:#5e423a;font-size:14px}
+.vin .note{max-width:300px}
+/* dress */
+.dsec{padding:46px 20px!important;background:url(img/tpl-dressbg.jpg) center/cover;margin:20px 0;-webkit-mask-image:linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent)}
+.dcd{max-width:360px;margin:30px auto;background:#fdfcfa;padding:34px 24px 26px;box-shadow:0 18px 34px rgba(90,70,50,.22);transform:rotate(-1deg)}
+.dh{font:400 28px/1.1 "Playfair Display",serif;letter-spacing:.18em;color:#2a2422;margin:0}
+.dsub{font:italic 400 16px/1.3 "Playfair Display",serif;color:#5a4a44;margin:6px 0 14px}
+.dtx{font:400 13.5px/1.6 Jost,sans-serif;letter-spacing:.03em;color:#4a3e3a;margin:0 0 18px}
+.dsw{gap:9px}.dsw i{width:30px;height:30px;animation:none}
+.dty{font:30px/1 "Great Vibes",cursive;color:#2a2422;margin:18px 0 0}
+/* rsvp */
+.rsec{background:#fcf5ed url(img/tpl-rsvp-top.jpg) top/100% auto no-repeat;position:relative;padding:calc(min(100vw,500px)*.33) 34px calc(min(100vw,500px)*.6)!important;margin:20px 0;-webkit-mask-image:linear-gradient(180deg,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(180deg,transparent,#000 3%,#000 97%,transparent)}
+.rsec::after{content:"";position:absolute;left:0;right:0;bottom:0;aspect-ratio:1024/768;background:url(img/tpl-rsvp-bot.jpg) bottom/100% auto no-repeat;z-index:-1}
+.rsec{isolation:isolate}
+.rsec>*{position:relative;z-index:1}
 html.rv .r{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
 html.rv .r.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}#petals{display:none}}
@@ -376,7 +400,7 @@ html.rv .r.in{opacity:1;transform:none}
 
 <main>
  <section class="gpg"><img class="fe" src="img/tpl-ganesha3.jpg" alt="Om Shree Ganeshay Namah"></section>
- <header class="sec r fr hero2">
+ <header class="sec r a1 hero2">
   <div class="tcard">
    <div class="tin">
     <p class="host" data-host></p>
@@ -417,7 +441,7 @@ html.rv .r.in{opacity:1;transform:none}
   </div>
  </section>
 
- <section class="sec r fr">
+ <section class="sec r vsec"><div class="vcard fe"><div class="vin">
   <p class="kick">Venue</p>
   <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
   <p class="vn">Ramada by Wyndham Khajuraho</p>
@@ -428,17 +452,20 @@ html.rv .r.in{opacity:1;transform:none}
    <g class="car"><rect x="-11" y="-7" width="22" height="11" rx="4" fill="#b48a3c"/><rect x="-6" y="-12" width="12" height="7" rx="2" fill="#b48a3c"/><circle cx="-6" cy="5" r="3" fill="#4a2b27"/><circle cx="6" cy="5" r="3" fill="#4a2b27"/></g></svg>
   <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ramada+by+Wyndham+Khajuraho"><svg><use href="#ic-pin"/></svg>Get directions</a>
   <p class="note">Pickup from Khajuraho railway station and airport — details will be shared as per your travel plans.</p>
+   </div></div>
  </section>
 
- <section class="sec r fr">
-  <p class="kick">Dress Code</p>
-  <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
-  <div class="swatch" aria-hidden="true"></div>
-  <p class="dc1">Come in every colour you love!</p>
-  <p class="note" style="margin-top:6px">No colour rules — just wear what makes you feel festive. A shawl for the chilly February evenings will help.</p>
+ <section class="sec r dsec">
+  <div class="dcd">
+   <h2 class="dh">DRESS CODE</h2>
+   <p class="dsub">Every colour welcome</p>
+   <p class="dtx">No colour rules — wear whatever makes you feel festive and fabulous. A shawl for the chilly February evenings will help.</p>
+   <div class="swatch dsw" aria-hidden="true"></div>
+   <p class="dty">thank you</p>
+  </div>
  </section>
 
- <section class="sec r fr" id="rsvp-sec">
+ <section class="sec r rsec" id="rsvp-sec">
   <p class="kick">Kindly Respond</p>
   <h2 class="st">Will You Join Us?</h2>
   <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
@@ -538,7 +565,7 @@ addEventListener("hashchange", render);
 /* petals, swatches, polaroids */
 const PET = [["#efe2d2","#ffffff"],["#f3e9dc","#fffdf8"],["#f2a7b6","#ffe1e7"],["#eb92a6","#ffd3dc"],["#d9667c","#f6a5b4"],["#cf5870","#f39aac"]];
 $("#petals").innerHTML = Array.from({length:12}, (_, i) => { const k = PET[i % PET.length], w = R(10,15); return `<i style="left:${R(0,100)}%;width:${w}px;height:${w*1.3}px;--a:${k[0]};--b:${k[1]};animation-duration:${R(10,18)}s;animation-delay:-${R(0,18)}s"></i>`; }).join("");
-$(".swatch").innerHTML = ["#e2557c","#f2a43a","#f5d547","#6ab04c","#2fb6a8","#3a7bd5","#8e5bd6","#c0717e","#b8955a"].map((c, i) => `<i style="background:${c};animation-delay:-${(i*.3).toFixed(1)}s"></i>`).join("");
+$(".swatch").innerHTML = ["#e8a0ad","#f3c39b","#f2dc9a","#b9d3a8","#a9d3cf","#a9bfe3","#c6b1e0"].map((c, i) => `<i style="background:${c};animation-delay:-${(i*.3).toFixed(1)}s"></i>`).join("");
 void 0; // = CONFIG.photos.map(src => `<figure><img src="${src}" alt="" loading="lazy"></figure>`).join("");
 
 /* music */

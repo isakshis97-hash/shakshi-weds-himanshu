@@ -167,10 +167,27 @@ textarea{min-height:84px;resize:vertical}
 
 
 main>section:nth-of-type(2){background:linear-gradient(180deg,transparent,var(--blush) 18%,var(--blush) 82%,transparent)}
-main>section:nth-of-type(4){background:linear-gradient(180deg,transparent,var(--peach) 18%,var(--peach) 82%,transparent)}
-main>section:nth-of-type(6){background:linear-gradient(180deg,transparent,var(--mint) 18%,var(--mint) 82%,transparent)}
-main>section:nth-of-type(7){background:linear-gradient(180deg,transparent,var(--lav) 18%,var(--lav) 82%,transparent)}
+main>section:nth-of-type(3){background:linear-gradient(180deg,transparent,var(--peach) 18%,var(--peach) 82%,transparent)}
+main>section:nth-of-type(5){background:linear-gradient(180deg,transparent,var(--mint) 18%,var(--mint) 82%,transparent)}
+main>section:nth-of-type(6){background:linear-gradient(180deg,transparent,var(--lav) 18%,var(--lav) 82%,transparent)}
 .cd b{background:rgba(255,255,255,.55)}
+
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:60px 26px}
+.hero .mantra{font-size:20px}
+.hero .tog{margin-top:22px}
+.hero .nm{font-size:clamp(54px,16vw,72px)}
+.sec{padding:72px 28px}
+.sec>*{max-width:400px;margin-left:auto;margin-right:auto}
+.kick{font-size:30px}
+.fcard{padding:44px 30px 38px}
+.sc{width:min(100%,320px)}
+.cd{max-width:320px}
+.evw{max-width:340px}
+.ev h3{font-size:21px}
+.vn{font-size:25px}
+.note{max-width:320px}
+footer.sec{padding:40px 28px 120px}
+.ty{font-size:21px;margin-top:0}
 html.rv .r{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
 html.rv .r.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}#petals{display:none}}
@@ -203,7 +220,6 @@ html.rv .r.in{opacity:1;transform:none}
  <header class="sec hero">
   <p class="mantra">॥ श्री गणेशाय नमः ॥</p>
   <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
-  <figure class="arch" style="margin-top:0"><img src="img/couple.jpg" alt="Shakshi and Himanshu"></figure>
   <p class="tog">The wedding of</p>
   <p class="nm" data-n1>Shakshi</p>
   <p class="amp">&amp;</p>
@@ -238,12 +254,6 @@ html.rv .r.in{opacity:1;transform:none}
   <div class="cd" id="cd"><div><b data-u="d">00</b><span>DAYS</span></div><div><b data-u="h">00</b><span>HOURS</span></div><div><b data-u="m">00</b><span>MINS</span></div><div><b data-u="s">00</b><span>SECS</span></div></div>
  </section>
 
- <section class="sec r">
-  <p class="kick">moments</p>
-  <h2 class="st">Blessed Moments</h2>
-  <svg class="div" aria-hidden="true" style="margin-bottom:6px"><use href="#divider"/></svg>
-  <div class="pol" id="pol"></div>
- </section>
 
  <section class="sec r" id="events">
   <p class="kick">celebrations</p>
@@ -314,7 +324,6 @@ html.rv .r.in{opacity:1;transform:none}
  </section>
 
  <footer class="sec r" style="padding-bottom:110px">
-  <div id="closing"></div>
   <p class="ty">Thank you for being part of our celebration</p>
   <p class="love">With love, the <span data-fams>Singhal and Mathur</span> families</p>
  </footer>
@@ -366,7 +375,7 @@ function render(){
   document.title = couple + " · Shubh Vivah";
   $("#cal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(couple + " · Wedding") + "&dates=20270210T123000Z/20270211T182900Z&details=" + encodeURIComponent(EVS.map(e => e.n + ": " + e.day + ", " + e.t).join("\n")) + "&location=" + encodeURIComponent(VENUE);
   $("#evs").innerHTML = EVS.map(e => `<div class="ev"><h3>${e.n.replace("&","&amp;")}</h3><p>${e.day}<span>·</span>${e.t}</p></div>`).join("");
-  $("#closing").innerHTML = (CONFIG.closing[o] || []).map(src => `<figure class="fam"><img src="${src}" alt="Our family" loading="lazy"></figure>`).join("");
+  void 0; // = (CONFIG.closing[o] || []).map(src => `<figure class="fam"><img src="${src}" alt="Our family" loading="lazy"></figure>`).join("");
 }
 render();
 addEventListener("hashchange", render);
@@ -375,7 +384,7 @@ addEventListener("hashchange", render);
 const PET = [["#efe2d2","#ffffff"],["#f3e9dc","#fffdf8"],["#f2a7b6","#ffe1e7"],["#eb92a6","#ffd3dc"],["#d9667c","#f6a5b4"],["#cf5870","#f39aac"]];
 $("#petals").innerHTML = Array.from({length:12}, (_, i) => { const k = PET[i % PET.length], w = R(10,15); return `<i style="left:${R(0,100)}%;width:${w}px;height:${w*1.3}px;--a:${k[0]};--b:${k[1]};animation-duration:${R(10,18)}s;animation-delay:-${R(0,18)}s"></i>`; }).join("");
 $(".swatch").innerHTML = ["#e2557c","#f2a43a","#f5d547","#6ab04c","#2fb6a8","#3a7bd5","#8e5bd6","#c0717e","#b8955a"].map((c, i) => `<i style="background:${c};animation-delay:-${(i*.3).toFixed(1)}s"></i>`).join("");
-$("#pol").innerHTML = CONFIG.photos.map(src => `<figure><img src="${src}" alt="" loading="lazy"></figure>`).join("");
+void 0; // = CONFIG.photos.map(src => `<figure><img src="${src}" alt="" loading="lazy"></figure>`).join("");
 
 /* music */
 let audio = null, playing = false;

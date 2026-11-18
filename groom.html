@@ -291,6 +291,42 @@ main{padding-top:14vh}
 .sin .dn{font-size:clamp(46px,13vw,62px)}.sin .dd{font-size:11px}.sin .dm{font-size:15px}
 .sin .hint{font-size:10.5px;margin:10px 0 2px;letter-spacing:.2em}.sin .lnk{font-size:13px;padding:4px}
 .sin .cd{gap:5px;margin-top:10px;width:100%}.sin .cd b{font-size:clamp(17px,5vw,22px);padding:8px 0}.sin .cd span{font-size:8.5px;letter-spacing:.12em;margin-top:5px}
+
+/* one common background */
+body{background:#f1e6d3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .4 0 0 0 0 .3 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")!important}
+#bgfix,#fgfix{display:none}
+main{padding:0 0 60px!important;max-width:500px}
+.sec{padding:20px 0!important}
+.fe{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect}
+/* arch frame (third template) for other pages */
+.fr{--W:min(100vw,500px);border-style:solid;border-width:calc(var(--W)*.435) calc(var(--W)*.175) calc(var(--W)*.48);border-image:url(img/tpl-tap.jpg) 488 196 538 fill / calc(var(--W)*.435) calc(var(--W)*.175) calc(var(--W)*.48) stretch round;padding:0 4px!important;margin:10px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent),linear-gradient(180deg,transparent,#000 3%,#000 97%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent),linear-gradient(180deg,transparent,#000 3%,#000 97%,transparent);mask-composite:intersect}
+.fr>*{max-width:none}
+.fr .kick{margin-top:-6px}
+.fr .note{max-width:none}
+.fr .route{max-width:100%}
+.fr .sc{width:100%}
+.fr .cd{gap:6px}.fr .cd b{font-size:clamp(20px,6vw,26px);padding:10px 0}.fr .cd span{font-size:9.5px;letter-spacing:.12em}
+.fr .grid{grid-template-columns:1fr 1fr;gap:6px}.fr .ck span{font-size:13.5px;padding:6px 8px;gap:7px;min-height:44px}
+.fr .opt span{font-size:14.5px;padding:8px 12px;min-height:48px}
+.fr .vn{font-size:22px}
+footer.fr{padding-bottom:0!important}
+footer.fr .ty{margin-top:0}
+/* family card + ganesha blend */
+
+.hero .tcard{}
+.gpg{min-height:auto!important;padding:30px 0 10px!important}
+.gpg img{max-height:none!important;max-width:100%!important;width:100%!important}
+/* rituals on couple template */
+.ccard{background:url(img/tpl-couple.jpg) center/100% 100% no-repeat!important;aspect-ratio:736/1030!important;max-width:500px!important;position:relative!important}
+.ccard .ein{position:absolute!important;left:31%!important;right:17%!important;top:22%!important;bottom:22%!important;display:flex!important;flex-direction:column;justify-content:center}
+.ccard .ein .kick{font-size:22px}.ccard .ein .st{font-size:clamp(20px,5.6vw,26px)}
+.ccard .ein .div{width:110px;margin:4px auto 6px!important}
+.ccard .ein .evw{padding-left:20px}
+.ccard .ein .ev{padding:4px 0}.ccard .ein .ev h3{font-size:clamp(13px,3.7vw,16px)}.ccard .ein .ev p{font-size:clamp(11.5px,3.2vw,13.5px)}
+.ccard .ein .ev::before{left:-17px;top:10px;width:6px;height:6px}
+.ccard .ein .rail{left:3px}.ccard .ein .plane{left:-7px;width:16px;height:20px}
+.ccard .ein .btn{margin-top:6px!important;min-height:34px!important;padding:5px 12px!important;font-size:12px!important}
+#events{padding-left:0!important;padding-right:0!important}
 html.rv .r{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
 html.rv .r.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}#petals{display:none}}
@@ -307,8 +343,6 @@ html.rv .r.in{opacity:1;transform:none}
  <symbol id="plane" viewBox="0 0 40 46"><path d="M20 2c2 0 3 3 3 6v10l15 8v4l-15-4v9l5 4v3l-8-2-8 2v-3l5-4v-9L2 30v-4l15-8V8c0-3 1-6 3-6z" fill="#fffdf8" stroke="#b48a3c" stroke-width="1.4"/></symbol>
 </defs></svg>
 
-<div id="bgfix" aria-hidden="true"></div>
-<div id="fgfix" aria-hidden="true"></div>
 <div id="petals" aria-hidden="true"></div>
 <div id="shower" aria-hidden="true"></div>
 
@@ -321,9 +355,9 @@ html.rv .r.in{opacity:1;transform:none}
 <button id="snd" type="button" aria-label="Play music" hidden><i></i><i></i><i></i><i></i></button>
 
 <main>
- <section class="gpg"><img src="img/tpl-ganesha2.jpg" alt="Om Shree Ganeshay Namah"></section>
+ <section class="gpg"><img class="fe" src="img/tpl-ganesha2.jpg" alt="Om Shree Ganeshay Namah"></section>
  <header class="sec hero">
-  <div class="tcard">
+  <div class="tcard fe">
    <div class="tin">
     <p class="host" data-host></p>
     <p class="req" data-req></p>
@@ -338,8 +372,7 @@ html.rv .r.in{opacity:1;transform:none}
   </div>
  </header>
 
- <section class="sec r sdsec">
-  <div class="scard"><div class="sin">
+ <section class="sec r fr">
   <p class="kick">Save the Date</p>
   <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
   <div class="sc">
@@ -349,12 +382,11 @@ html.rv .r.in{opacity:1;transform:none}
   <p class="hint" id="shint">SCRATCH TO REVEAL</p>
   <button type="button" class="lnk" id="reveal">Or tap here</button>
   <div class="cd" id="cd"><div><b data-u="d">00</b><span>DAYS</span></div><div><b data-u="h">00</b><span>HOURS</span></div><div><b data-u="m">00</b><span>MINS</span></div><div><b data-u="s">00</b><span>SECS</span></div></div>
-   </div></div>
  </section>
 
 
  <section class="sec r" id="events" style="padding-left:14px;padding-right:14px">
-  <div class="ecard">
+  <div class="ecard ccard fe">
    <div class="ein">
     <p class="kick">Celebrations</p>
     <h2 class="st">Wedding Rituals</h2>
@@ -365,7 +397,7 @@ html.rv .r.in{opacity:1;transform:none}
   </div>
  </section>
 
- <section class="sec r">
+ <section class="sec r fr">
   <p class="kick">Venue</p>
   <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
   <p class="vn">Ramada by Wyndham Khajuraho</p>
@@ -378,7 +410,7 @@ html.rv .r.in{opacity:1;transform:none}
   <p class="note">Pickup from Khajuraho railway station and airport — details will be shared as per your travel plans.</p>
  </section>
 
- <section class="sec r">
+ <section class="sec r fr">
   <p class="kick">Dress Code</p>
   <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
   <div class="swatch" aria-hidden="true"></div>
@@ -386,7 +418,7 @@ html.rv .r.in{opacity:1;transform:none}
   <p class="note" style="margin-top:6px">No colour rules — just wear what makes you feel festive. A shawl for the chilly February evenings will help.</p>
  </section>
 
- <section class="sec r" id="rsvp-sec">
+ <section class="sec r fr" id="rsvp-sec">
   <p class="kick">Kindly Respond</p>
   <h2 class="st">Will You Join Us?</h2>
   <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
@@ -425,7 +457,7 @@ html.rv .r.in{opacity:1;transform:none}
   <div class="thanks" id="thanks" hidden aria-live="polite"><h3 id="th"></h3><p id="tp"></p><a class="btn" id="wa" hidden style="margin:10px 0">WhatsApp didn't open? Tap here</a><br><button class="lnk" type="button" id="again">Change my reply</button></div>
  </section>
 
- <footer class="sec r" style="padding-bottom:110px">
+ <footer class="sec r fr">
   <p class="ty">Thank you for being part of our celebration</p>
   <p class="love">With love, the <span data-fams>Singhal and Mathur</span> families</p>
  </footer>

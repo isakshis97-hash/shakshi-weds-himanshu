@@ -371,6 +371,39 @@ footer.fr .ty{margin-top:0}
 .rsec::after{content:"";position:absolute;left:0;right:0;bottom:0;aspect-ratio:1024/768;background:url(img/tpl-rsvp-bot.jpg) bottom/100% auto no-repeat;z-index:-1}
 .rsec{isolation:isolate}
 .rsec>*{position:relative;z-index:1}
+
+/* ganesha full screen */
+.gfull{position:relative;min-height:100svh!important;display:grid!important;place-items:center;padding:0!important;overflow:hidden;background:#fde8cf}
+.gfull::before{content:"";position:absolute;inset:-30px;background:url(img/tpl-ganesha3.jpg) center/cover;filter:blur(18px);opacity:.75}
+.gfull img{position:relative;width:100%!important;max-width:500px!important;height:100svh!important;max-height:none!important;object-fit:contain;box-shadow:none!important;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)!important;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)!important}
+/* family card on cow */
+.hero3{padding:40px 0 20px!important}
+.cow2{position:relative;width:100%;max-width:500px;margin:0 auto;aspect-ratio:1127/1600;background:url(img/tpl-cow.jpg) center/100% 100% no-repeat}
+.c2in{position:absolute;left:14%;right:14%;top:17%;bottom:36%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.c2in .host{font-size:clamp(12px,3.4vw,14.5px);margin:0}
+.c2in .req{font:italic 400 clamp(12px,3.4vw,14.5px)/1.45 "Playfair Display",serif;color:#7a5e50;margin:3px 0 6px}
+.c2in .nm{font-size:clamp(32px,9.6vw,44px);margin:0;color:#8a2a3a}
+.c2in .gp{font-size:clamp(10px,2.8vw,12px);color:#6a5248;margin:1px 0 0}
+.c2in .ofn{font-size:clamp(11px,3vw,13px);margin:2px 0 0}
+.c2in .with{font-size:clamp(20px,5.6vw,26px);margin:4px 0 0;color:#a07a3a}
+.c2in .tag{font-size:clamp(12px,3.3vw,14px);margin-top:10px;color:#8a6a2a}
+/* save the date */
+.sdt{padding:20px 0 40px!important}
+.sdimg{width:100%;max-width:500px;margin:0 auto;aspect-ratio:1024/1060;-webkit-mask-image:linear-gradient(180deg,transparent,#000 5%,#000 88%,transparent);mask-image:linear-gradient(180deg,transparent,#000 5%,#000 88%,transparent);background:url(img/tpl-std.jpg) top/100% auto no-repeat}
+.sdbody{margin:-10px auto 0;max-width:360px!important;padding:0 26px;position:relative}
+.sdbody .sc{box-shadow:0 14px 30px rgba(140,100,40,.22);border-radius:14px}
+.sdbody .cd b{background:rgba(255,252,245,.92)}
+/* closing */
+.endsec{margin-bottom:60px!important}
+.endin{text-align:center;margin:calc(var(--W)*-.14) 0 calc(var(--W)*-.1)}
+.endin .ty{font-size:clamp(19px,5.6vw,24px)}
+.endnm{font:400 clamp(34px,10vw,46px)/1.2 "Great Vibes",cursive;color:#8a2a3a;margin:16px 0 0}
+/* enhancements */
+.sec{scroll-margin-top:20px}
+.dn,.cd b{background-clip:padding-box}
+.dn{background:linear-gradient(180deg,#b08a3e,#7a1f2b);-webkit-background-clip:text;background-clip:text;color:transparent!important}
+.kick,.dty,.endnm{text-shadow:0 1px 0 rgba(255,255,255,.6)}
+.btn:not(.ghost){background:linear-gradient(180deg,#cf8592,#b5606f)!important}
 html.rv .r{opacity:0;transform:translateY(16px);transition:opacity 1s ease,transform 1s ease}
 html.rv .r.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}#petals{display:none}}
@@ -399,10 +432,10 @@ html.rv .r.in{opacity:1;transform:none}
 <button id="snd" type="button" aria-label="Play music" hidden><i></i><i></i><i></i><i></i></button>
 
 <main>
- <section class="gpg"><img class="fe" src="img/tpl-ganesha3.jpg" alt="Om Shree Ganeshay Namah"></section>
- <header class="sec r a1 hero2">
-  <div class="tcard">
-   <div class="tin">
+ <section class="gpg gfull"><img src="img/tpl-ganesha3.jpg" alt="Om Shree Ganeshay Namah"></section>
+ <header class="sec r hero3">
+  <div class="cow2 fe">
+   <div class="c2in">
     <p class="host" data-host></p>
     <p class="req" data-req></p>
     <p class="nm" data-n1>Shakshi</p>
@@ -416,9 +449,9 @@ html.rv .r.in{opacity:1;transform:none}
   </div>
  </header>
 
- <section class="sec r fr">
-  <p class="kick">Save the Date</p>
-  <svg class="div" aria-hidden="true"><use href="#divider"/></svg>
+ <section class="sec r sdt">
+  <div class="sdimg"></div>
+  <div class="sdbody">
   <div class="sc">
    <div class="dcard" aria-label="Thursday, 11 February 2027"><p class="dd">THURSDAY</p><p class="dn">11</p><p class="dm">February 2027</p></div>
    <canvas id="scratch" aria-hidden="true"></canvas>
@@ -426,6 +459,7 @@ html.rv .r.in{opacity:1;transform:none}
   <p class="hint" id="shint">SCRATCH TO REVEAL</p>
   <button type="button" class="lnk" id="reveal">Or tap here</button>
   <div class="cd" id="cd"><div><b data-u="d">00</b><span>DAYS</span></div><div><b data-u="h">00</b><span>HOURS</span></div><div><b data-u="m">00</b><span>MINS</span></div><div><b data-u="s">00</b><span>SECS</span></div></div>
+  </div>
  </section>
 
 
@@ -504,10 +538,12 @@ html.rv .r.in{opacity:1;transform:none}
   <div class="thanks" id="thanks" hidden aria-live="polite"><h3 id="th"></h3><p id="tp"></p><a class="btn" id="wa" hidden style="margin:10px 0">WhatsApp didn't open? Tap here</a><br><button class="lnk" type="button" id="again">Change my reply</button></div>
  </section>
 
- <footer class="sec r cowsec"><div class="cow fe"><div class="cin">
+ <footer class="sec r a1 endsec"><div class="endin">
+  <svg class="div" aria-hidden="true" style="margin:0 auto 14px"><use href="#divider"/></svg>
   <p class="ty">Thank you for being part of our celebration</p>
   <p class="love">With love, the <span data-fams>Singhal and Mathur</span> families</p>
- </div></div></footer>
+  <p class="endnm" data-mono>Shakshi &amp; Himanshu</p>
+ </div></footer>
 </main>
 
 <script>
